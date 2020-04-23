@@ -56,7 +56,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     
-                        <form class="md-float-material form-material">
+                        <form class="md-float-material form-material" method="post" action="<?php echo base_url()?>Auth/login_proses">
                             <div class="text-center">
                                 <img src="<?php echo base_url()?>assets\backend\images\logo_jayapura_dev.png" width="25%" alt="logo.png">
                             </div>
@@ -68,11 +68,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="text" name="email" class="form-control" required="" placeholder="Username">
+                                        <input type="text" name="nama" class="form-control" required="" placeholder="Username">
                                         <span class="form-bar"></span>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="password" name="password" class="form-control" required="" placeholder="Password">
+                                        <input type="password" name="sandi" class="form-control" required="" placeholder="Password">
                                         <span class="form-bar"></span>
                                     </div>
                                     <div class="row m-t-25 text-left">
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="row m-t-30">
                                         <div class="col-md-12">
-                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
                                         </div>
                                     </div>
                                     <hr>

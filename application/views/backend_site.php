@@ -24,6 +24,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\bower_components\bootstrap\css\bootstrap.min.css">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\icon\feather\css\feather.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\icon\icofont\css\icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\pages\data-table\css\buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
+    
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\css\jquery.mCustomScrollbar.css">
@@ -307,25 +313,24 @@
             </div>
             <!-- Sidebar inner chat end-->
             <div class="pcoded-main-container">
-                <?php $this->load->view('menu_level') ?>
+                <div class="pcoded-wrapper">
+                   <?php $this->load->view('menu_level') ?>
+                   <div class="pcoded-content">
+                      <div class="pcoded-inner-content">
+                         <div class="main-body">
+                           <div class="page-wrapper">
+                              <?php echo $contents ?>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>           
             </div>
-            <div class="pcoded-content">
-            <div class="pcoded-inner-content">
-                <div class="main-body">
-                    <div class="page-wrapper">
-                        <div class="page-body">
-                          <?php echo $content ?>
-                        </div>
-                    </div>
-
-                    <div id="styleSelector">
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+</div>
 
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -372,10 +377,24 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
-    <script data-cfasync="false" src="..\..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript" src="..\files\bower_components\jquery\js\jquery.min.js"></script>
+    <script data-cfasync="false" src="..\..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript" src="<?php echo base_url()?>assets/bower_components\jquery\js\jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\popper.js\js\popper.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net\js\jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\jszip.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\pdfmake.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\vfs_fonts.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-buttons\js\buttons.print.min.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-buttons\js\buttons.html5.min.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js"></script>
+    <script src="<?php echo base_url()?>assets\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
+
+<script src="<?php echo base_url()?>assets\backend\pages\data-table\js\data-table-custom.js"></script>
+
     <!-- jquery slimscroll js -->
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
     <!-- modernizr js -->
