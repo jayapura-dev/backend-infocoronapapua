@@ -13,4 +13,28 @@ class M_odp extends CI_model{
     {
         $this->db->insert('tb_odp',$data);
     }
+
+    function update_odp($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
+    // Move Data From ODP to ODP
+    function create_pdp($data)
+    {
+        $this->db->insert('tb_pdp', $data);
+    }
+
+    // Move Data From ODP to Suspect
+    function create_suspect($data)
+    {
+        $this->db->insert('tb_suspect', $data);
+    }
+
+    // Delete Data From ODP After Move to PDP Or Suspect
+    function delete_odp($where = 0)
+    {
+        $this->db->delete('tb_odp', array('id_odp' => $where));
+    }
 }

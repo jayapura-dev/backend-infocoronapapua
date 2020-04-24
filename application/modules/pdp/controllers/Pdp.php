@@ -32,6 +32,7 @@ class Pdp extends MX_Controller{
     $kontak = $this->input->post('kontak');
     $id_kabupaten = $this->input->post('id_kabupaten');
     $id_rs = $this->input->post('id_rs');
+    $is_from = $this->input->post('is_from');
     $date_created = $this->input->post('date_created');
 
     $data = array(
@@ -58,4 +59,5 @@ class Pdp extends MX_Controller{
     );
     redirect('Pdp/data_pdp');
   }
+  
 }

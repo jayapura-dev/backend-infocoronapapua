@@ -10,6 +10,6 @@ class M_rumahsakit extends CI_model{
     }
     function create_rs($data)
     {
-        $this->db->insert('tb_rs',$data);
+        $this->db->insert('tb_rs_rujukan',$data);
     }
 }

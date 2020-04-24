@@ -23,7 +23,6 @@
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
-        <a href="#" title="Export PDF"><i class="icofont icofont-file-pdf"></i></a>
         <a href="#" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
@@ -38,7 +37,7 @@
               <th class="col-md-3">Nama</th>
               <th class="col-md-1">Umur</th>
               <th>Gender</th>
-              <th class="col-md-1">Kontak</th>
+              <th>Status</th>
               <th>RS</th>
               <th>Action</th>
             </tr>
@@ -49,11 +48,19 @@
             foreach($suspect as $item){?>
             <tr>
               <td><?php echo $no++ ?></td>
-              <td class="uppercase"><?php echo $item->nama_kab ?></td>
+              <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
               <td><?php echo $item->nama ?></td>
               <td><?php echo $item->umur ?></td>
               <td><?php echo $item->gender ?></td>
-              <td><?php echo $item->kontak ?></td>
+              <td class="center">
+                <?php if($item->status == 'POSITIF'): ?>
+                  <label class="label label-danger">POSITIF</label>
+                <?php elseif($item->status == 'MENINGAAL'): ?>
+                  <label class="label label-inverse">MENINGGAL</label>
+                <?php else: ?>
+                  <label class="label label-success">SEMBUH</label>
+                <?php endif ?>
+              </td>
               <td><?php echo $item->rumah_sakit ?></td>
               <td>
                 <div class="btn-group dropdown-split-primary">

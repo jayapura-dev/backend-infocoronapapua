@@ -1,5 +1,3 @@
-<script src="<?php echo base_url()?>assets\backend\js\jquery-1.11.3.min.js"></script>
-
 <div class="page-header">
   <div class="row align-items-end">
       <div class="col-lg-12">
@@ -10,7 +8,9 @@
                   </li>
                   <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                   </li>
-                  <li class="breadcrumb-item"><a href="#!">Data Kabupaten</a>
+                  <li class="breadcrumb-item"><a href="#!">Report</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#!">Rekap Kabupaten</a>
                   </li>
               </ul>
           </div>
@@ -21,11 +21,10 @@
 <div class="page-body">
   <div class="card">
     <div class="card-header">
-      <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> DATA KABUPATEN DI PROVINSI PAPUA </strong>
+      <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> REKAP DATA PER KABUPATEN / KOTA </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
-        <a href="<?php echo base_url()?>Pdp/create_pdp" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
     <div class="card-block">
@@ -35,7 +34,13 @@
             <tr>
               <th class="col-md-1">No</th>
               <th>Kab/Kota</th>
-              <th>Action</th>
+              <th>ODP</th>
+              <th>PDP</th>
+              <th>CONFIRM</th>
+              <th>POSITIF</th>
+              <th>SEMBUH</th></th>
+              <th>MENINGGAL</th>
+              <th>action</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +50,12 @@
             <tr>
               <td><?php echo $no++ ?></td>
               <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
+              <td><?php echo $item->odp ?></td>
+              <td><?php echo $item->pdp ?></td>
+              <td><?php echo $item->confirm ?></td>
+              <td><?php echo $item->positif ?></td>
+              <td><?php echo $item->sembuh ?></td>
+              <td><?php echo $item->meninggal ?></td>
               <td></td>
             </tr>
             <?php } ?>
@@ -54,8 +65,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-

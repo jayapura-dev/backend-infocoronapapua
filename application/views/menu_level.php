@@ -51,6 +51,33 @@
                             <span class="pcoded-mtext">SUSPECT</span>
                         </a>
                     </li>
+                    <div class="pcoded-navigatio-lavel">REPORT</div>
+                    <ul class="pcoded-item pcoded-left-item">
+                        <li class="pcoded-hasmenu">
+                            <a href="javascript:void(0)">
+                                <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                                <span class="pcoded-mtext">REKAP</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class=" ">
+                                    <a href="<?php echo base_url()?>Rekap/kabkota">
+                                        <span class="pcoded-mtext">Kabupaten</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="#">
+                                        <span class="pcoded-mtext">Hari</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="#">
+                                        <span class="pcoded-mtext">Bulanan</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </nav>

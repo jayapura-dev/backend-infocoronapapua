@@ -19,13 +19,11 @@
 </div>
 
 <div class="page-body">
+  <?php echo $this->session->flashdata('save');?>
   <div class="card">
     <div class="card-header">
       <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> DATA RUMAH SAKIT DI PROVINSI PAPUA </strong>
       <div class="card-header-right">
-        <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
-        <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
-        <a href="#" title="Export PDF"><i class="icofont icofont-file-pdf"></i></a>
         <a href="<?php echo base_url()?>Rumahsakit/create_rs" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
@@ -40,6 +38,7 @@
               <th>No Telfon</th>
               <th>Alamat</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -52,7 +51,7 @@
               <td class="text-uppercase"><?php echo $item->rumah_sakit ?></td>
               <td><?php echo $item->kontak ?></td>
               <td><?php echo $item->alamat ?></td>
-              <td><?php echo $item->status ?></td>
+              <td><?php echo $item->status_rs ?></td>
               <td>
                 <div class="btn-group dropdown-split-primary">
                   <button type="button" class="btn btn-primary btn-sm"><i class="icofont icofont-ui-edit"></i></button>
