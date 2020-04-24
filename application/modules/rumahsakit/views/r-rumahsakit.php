@@ -49,8 +49,8 @@
               <td><?php echo $no++ ?></td>
               <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
               <td class="text-uppercase"><?php echo $item->rumah_sakit ?></td>
-              <td><?php echo $item->kontak ?></td>
-              <td><?php echo $item->alamat ?></td>
+              <td><?php echo $item->no_telfon ?></td>
+              <td><?php echo $item->alamat_rs ?></td>
               <td><?php echo $item->status_rs ?></td>
               <td>
                 <div class="btn-group dropdown-split-primary">

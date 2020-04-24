@@ -58,13 +58,13 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Alamat</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control max-textarea" name="alamat" maxlength="255" rows="4"></textarea>
+                  <textarea class="form-control max-textarea" name="alamat_rs" maxlength="255" rows="4"></textarea>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Kontak</label>
                 <div class="col-sm-10">
-                  <input type="text" name="kontak" class="form-control">
+                  <input type="text" name="no_telfon" class="form-control">
                 </div>
               </div>
               <div class="form-group row">

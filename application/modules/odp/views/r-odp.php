@@ -95,9 +95,9 @@
                       '<?php echo $item->id_odp ?>',
                       '<?php echo $item->nama ?>',
                       '<?php echo $item->gender ?>',      
-                      '<?php echo $item->no_kontak ?>',
                       '<?php echo $item->umur ?>',
                       '<?php echo $item->alamat ?>',
+                      '<?php echo $item->no_kontak ?>',
                       '<?php echo $item->id_kabupaten ?>'
                     )">Pindah ke PDP</a>
                     <a data-toggle="modal" class="dropdown-item waves-effect waves-light" href="" data-target="#SendSuspect" onclick="sendsuspect(

@@ -9,7 +9,7 @@
          <input type="hidden" name="id_kabupaten" id="pdpidkabupaten" />
          <input type="hidden" name="alamat" id="pdpalamat" />
          <input type="hidden" name="kontak" id="pdpkontak" />
-         <input type="hidden" name="is_from" class="form-control" value="odp send" />
+         <input type="hidden" name="is_from" class="form-control" value="ODP SEND" />
          <input type="hidden" name="date_created" value="<?php echo date('Y-m-d') ?>" />
       </div>
     </div>

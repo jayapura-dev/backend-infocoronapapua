@@ -3,17 +3,17 @@
       <div class="col-lg-12">
           <div class="page-header-breadcrumb">
           <ul class="breadcrumb-title">
-                  <li class="breadcrumb-item">
-                      <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#!">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#!">Report</a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#!">Rekap Kabupaten</a>
-                  </li>
-              </ul>
-          </div>
+            <li class="breadcrumb-item">
+                <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">Report</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">Rekap Kabupaten</a>
+            </li>
+          </ul>
+         </div>
       </div>
   </div>
 </div>

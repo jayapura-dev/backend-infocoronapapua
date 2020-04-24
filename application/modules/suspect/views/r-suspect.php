@@ -34,7 +34,7 @@
             <tr>
               <th class="col-md-1">No</th>
               <th>Kab/Kota</th>
-              <th class="col-md-3">Nama</th>
+              <th></th>Nama</th>
               <th class="col-md-1">Umur</th>
               <th>Gender</th>
               <th>Status</th>

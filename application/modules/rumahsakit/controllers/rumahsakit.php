@@ -29,7 +29,7 @@ class Rumahsakit extends MX_Controller{
     $id_kabupaten = $this->input->post('id_kabupaten');
     $lat = $this->input->post('lat');
     $lon = $this->input->post('lon');
-    $kontak = $this->input->post('kontak');
+    $no_telfon = $this->input->post('no_telfon');
     $alamat = $this->input->post('alamat');
     $status_rs = $this->input->post('status_rs');
 
@@ -38,8 +38,8 @@ class Rumahsakit extends MX_Controller{
       'id_kabupaten'  => $id_kabupaten,
       'lat'           => $lat,
       'lon'           => $lon,
-      'kontak'        => $kontak,
-      'alamat'        => $alamat,
+      'no_telfon'     => $no_telfon,
+      'alamat_rs'     => $alamat,
       'status_rs'     => $status_rs
     );
 

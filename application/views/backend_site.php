@@ -192,7 +192,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="auth-normal-sign-in.htm">
+                                            <a href="<?php echo base_url()?>auth/logout">
                                                 <i class="feather icon-log-out"></i> Logout
                                             </a>
                                         </li>

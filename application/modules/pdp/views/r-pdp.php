@@ -20,15 +20,15 @@
 
 <div class="page-body">
   <?php echo $this->session->flashdata('save');?>
-  <?php echo $this->session->flashdata('edit');?>
+  <?php echo $this->session->flashdata('update');?>
   <?php echo $this->session->flashdata('delete');?>
+  <?php echo $this->session->flashdata('save_to_suspect');?>
   <div class="card">
     <div class="card-header">
       <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> DATA PASIEN DALAM PENGAWASAN (PDP) </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
-        <a href="#" title="Export PDF"><i class="icofont icofont-file-pdf"></i></a>
         <a href="<?php echo base_url()?>Pdp/create_pdp" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
@@ -72,7 +72,18 @@
                     <span class="sr-only">Toggle primary</span>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Edit</a>
+                  <a data-toggle="modal" class="dropdown-item waves-effect waves-light" href="" data-target="#update_pdp" onclick="updatepdp(
+                      '<?php echo $item->id_pdp ?>',
+                      '<?php echo $item->nama ?>',
+                      '<?php echo $item->gender ?>',
+                      '<?php echo $item->umur ?>',
+                      '<?php echo $item->alamat ?>',
+                      '<?php echo $item->kontak ?>',
+                      '<?php echo $item->id_rs ?>',
+                      '<?php echo $item->id_kabupaten ?>',
+                      '<?php echo $item->is_from ?>',
+                      '<?php echo $item->date_created ?>'
+                    )">Edit</a>
                     <a class="dropdown-item waves-effect waves-light" href="#">Delete</a>
                 </div>
                 </div>
@@ -82,8 +93,16 @@
                     <span class="sr-only">Toggle primary</span>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Ke ODP</a>
-                    <a data-toggle="modal" class="dropdown-item waves-effect waves-light" href="" data-target="#test" onclick="send('<?php echo $item->nama ?>')">ke Suspect</a>
+                  <a data-toggle="modal" class="dropdown-item waves-effect waves-light" href="" data-target="#SendSuspect" onclick="sendsuspect(
+                      '<?php echo $item->id_pdp ?>',
+                      '<?php echo $item->nama ?>',
+                      '<?php echo $item->gender ?>',
+                      '<?php echo $item->umur ?>',
+                      '<?php echo $item->alamat ?>',
+                      '<?php echo $item->kontak ?>',
+                      '<?php echo $item->id_rs ?>',
+                      '<?php echo $item->id_kabupaten ?>'
+                    )">Pindah ke Suspect</a>
                 </div>
               </td>
             </tr>
@@ -95,7 +114,26 @@
   </div>
 </div>
 
-<div class="modal fade" id="test" tabindex="-1" role="dialog">
+<div class="modal fade" id="update_pdp" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title"><i class="feather icon-edit"></i> Edit Item </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <?php $this->load->view('pdp/u-pdp') ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="SendSuspect" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -110,9 +148,9 @@
                   <i class="icofont icofont-close-line-circled"></i>
                 </button>
                 <p>
-                  <strong>Peringatan!</strong> <code>Anda Akan Mengirimkan Item ODP ini Ke Data PDP Apakah Anda Yakin ? Jika Ya, Lengkapi / Pilih <strong>Rumah Sakit</strong> Tempat Pasien Di Rawat.</code></p>
+                  <strong>Peringatan!</strong> <code>Anda Akan Mengirimkan Item PDP ini Ke Data Pasien Suspect Apakah Anda Yakin ? Jika ya.. Harap Periksa Semua Data.</code></p>
               </div>
-               <?php $this->load->view('pdp/send-suspect') ?>
+               <?php $this->load->view('pdp/pdp_sent_suspect') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
@@ -122,8 +160,29 @@
 </div>
 
 <script type="text/javascript">
-  function send(nama){
-    $('#odpnama').val(nama);
+  function sendsuspect(id_pdp,nama,gender,umur,alamat,kontak,id_rs,id_kabupaten){
+    $('#sid').val(id_pdp);
+    $('#snama').val(nama);
+    $('#sgender').val(gender);
+    $('#sumur').val(umur);
+    $('#salamat').val(alamat);
+    $('#skontak').val(kontak);
+    $('#sidrs').val(id_rs);
+    $('#sidkabupaten').val(id_kabupaten);
+  }
+   
+  function updatepdp(id_pdp,nama,gender,umur,alamat,kontak,id_rs,id_kabupaten,is_from,date_created)
+  {
+    $('#uid').val(id_pdp);
+    $('#unama').val(nama);
+    $('#ugender').val(gender);
+    $('#uumur').val(umur);
+    $('#ualamat').val(alamat);
+    $('#ukontak').val(kontak);
+    $('#uidrs').val(id_rs);
+    $('#uidkabupaten').val(id_kabupaten);
+    $('#uisfrom').val(is_from);
+    $('#datecreated').val(date_created);
   }
   
 </script>

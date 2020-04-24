@@ -14,4 +14,22 @@ class M_pdp extends CI_model{
     {
         $this->db->insert('tb_pdp',$data);
     }
+
+    function update_pdp($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
+    // Move Data From PDP to Suspect
+    function create_suspect($data)
+    {
+        $this->db->insert('tb_suspect', $data);
+    }
+
+    // Delete Data From PDP After Move to Suspect
+    function delete_pdp($where = 0)
+    {
+        $this->db->delete('tb_pdp', array('id_pdp' => $where));
+    }
 }

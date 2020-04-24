@@ -84,7 +84,7 @@
                     <?php }?>
                     <input type="hidden" name="date_created" value="<?php echo date('Y-m-d') ?>" class="form-control">
                 </select>
-                <input type="text" name="is_from" value="input-self" class="form-control">
+                <input type="hidden" name="is_from" value="INPUT SELF" class="form-control">
                 </div>
               </div>
               <div class="form-group row">

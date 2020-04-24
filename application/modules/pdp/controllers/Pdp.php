@@ -11,10 +11,11 @@ class Pdp extends MX_Controller{
   }
   public function data_pdp()
   {
-      $data['title'] = 'Data PDP';
-      $data['pdp'] = $this->M_pdp->pdp();
-
-      $this->template->load('backend_site','r-pdp', $data);
+    $data['title'] = 'Data PDP';
+    $data['pdp'] = $this->M_pdp->pdp();
+    $data['kabupatenlist'] = $this->db->query("SELECT * FROM tb_kabupaten")->result();
+    $data['rslist'] = $this->db->query("SELECT * FROM tb_rs_rujukan")->result();
+    $this->template->load('backend_site','r-pdp', $data);
   }
   public function create_pdp()
   {
@@ -23,6 +24,7 @@ class Pdp extends MX_Controller{
     $data['rslist'] = $this->db->query("SELECT * FROM tb_rs_rujukan")->result();
     $this->template->load('backend_site','c-pdp', $data);
   }
+
   function create_pdp_post()
   {
     $nama = $this->input->post('nama');
@@ -43,6 +45,7 @@ class Pdp extends MX_Controller{
       'kontak'      => $kontak,
       'id_kabupaten'=> $id_kabupaten,
       'id_rs'       => $id_rs,
+      'is_from'     => $is_from,
       'date_created'=> $date_created
     );
 
@@ -55,6 +58,90 @@ class Pdp extends MX_Controller{
           <i class='icofont icofont-close-line-circled'></i>
         </button>
         <strong>Success!</strong> <code> Item Berhasil Ditambah</code>
+      </div>"
+    );
+    redirect('Pdp/data_pdp');
+  }
+
+  function suspect_post_from_pdp()
+  {
+    $id_pdp = $this->input->post('id_pdp');
+
+    $nama = $this->input->post('nama');
+    $gender = $this->input->post('gender');
+    $umur = $this->input->post('umur');
+    $alamat = $this->input->post('alamat');
+    $kontak = $this->input->post('kontak');
+    $id_kabupaten = $this->input->post('id_kabupaten');
+    $id_rs = $this->input->post('id_rs');
+    $is_from = $this->input->post('is_from');
+    $status = $this->input->post('status');
+    $date_created = $this->input->post('date_created');
+
+    $data = array(
+      'nama'        => $nama,
+      'gender'      => $gender,
+      'umur'        => $umur,
+      'alamat'      => $alamat,
+      'kontak'      => $kontak,
+      'id_kabupaten'=> $id_kabupaten,
+      'id_rs'       => $id_rs,
+      'is_from'     => $is_from,
+      'status'      => $status,
+      'date_created'=> $date_created
+    );
+
+    $this->M_pdp->create_suspect($data);
+    $this->M_pdp->delete_pdp($id_pdp);
+
+    $this->session->set_flashdata(
+      "save_to_suspect",
+      "<div class='alert alert-success'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <i class='icofont icofont-close-line-circled'></i>
+        </button>
+        <strong>Success!</strong> <code> Item Telah Pindah Ke Data Suspect.</code>
+      </div>"
+    );
+    redirect('Pdp/data_pdp');
+  }
+
+  function update_pdp_post()
+  {
+    $id_pdp = $this->input->post('id_pdp');
+    $nama = $this->input->post('nama');
+    $gender = $this->input->post('gender');
+    $umur = $this->input->post('umur');
+    $alamat = $this->input->post('alamat');
+    $kontak = $this->input->post('kontak');
+    $id_kabupaten = $this->input->post('id_kabupaten');
+    $id_rs = $this->input->post('id_rs');
+    $is_from = $this->input->post('is_from');
+    $date_created = $this->input->post('date_created');
+
+    $data = array(
+      'nama'        => $nama,
+      'gender'      => $gender,
+      'umur'        => $umur,
+      'alamat'      => $alamat,
+      'kontak'      => $kontak,
+      'id_kabupaten'=> $id_kabupaten,
+      'id_rs'       => $id_rs,
+      'is_from'     => $is_from,
+      'date_created'=> $date_created
+    );
+
+    $where = array('id_pdp' => $id_pdp);
+
+    $this->M_pdp->update_pdp($where,$data,'tb_pdp');
+
+    $this->session->set_flashdata(
+      "update",
+      "<div class='alert alert-success'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <i class='icofont icofont-close-line-circled'></i>
+        </button>
+        <strong>Success!</strong> <code> Item Telah Diupdate/code>
       </div>"
     );
     redirect('Pdp/data_pdp');
