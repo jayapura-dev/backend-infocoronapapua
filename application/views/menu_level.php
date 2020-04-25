@@ -65,7 +65,7 @@
                                     </a>
                                 </li>
                                 <li class=" ">
-                                    <a href="#">
+                                    <a href="<?php echo base_url()?>Rekap/rekap_hari">
                                         <span class="pcoded-mtext">Hari</span>
                                     </a>
                                 </li>

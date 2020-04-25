@@ -3,7 +3,7 @@
       <label class="col-sm-2 col-form-label">Nama</label>
       <div class="col-sm-10">
          <input type="hidden" name="id_odp" id="sidodp" />
-         <input type="text" name="nama" id="snama" class="form-control" />
+         <input type="text" name="nama" id="snama" class="form-control" readonly="true" />
          <input type="hidden" name="gender" id="sgender" />
          <input type="hidden" name="umur" id="sumur" />
          <input type="hidden" name="id_kabupaten" id="sidkabupaten" />

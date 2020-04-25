@@ -26,11 +26,11 @@
     <div class="card-block">
         <strong>Peringatan!</strong> <code>APAKAH ANDA YAKIN INGIN MENGHAPUS ITEM INI ?</code><br/>
         <br/>
-        <form method=post action="<?php echo base_url()?>Pdp/delete_pdp_post">
+        <form method=post action="<?php echo base_url()?>Suspect/delete_suspect_post">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
-               <input type="hidden" name="id_pdp" value="<?php echo $detail['id_pdp'] ?>" class="form-control">
+               <input type="hidden" name="id_suspect" value="<?php echo $detail['id_suspect'] ?>" class="form-control">
                <input type="text" name="nama" value="<?php echo $detail['nama'] ?>" class="form-control" readonly="true">
             </div>
           </div>
@@ -38,7 +38,7 @@
             <label class="col-sm-2 col-form-label"></label>
               <div class="col-sm-10">
                 <input type="submit" class="btn btn-danger btn-sm" value="Delete" />
-                <a href="<?php echo base_url()?>Pdp/data_pdp" class="btn btn-inverse btn-sm"> Batal</a> 
+                <a href="<?php echo base_url()?>Suspect/data_suspect" class="btn btn-inverse btn-sm"> Batal</a> 
               </div>
            </div>
         </form>

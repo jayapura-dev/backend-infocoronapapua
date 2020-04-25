@@ -17,13 +17,16 @@
 </div>
 
 <div class="page-body">
+  <?php echo $this->session->flashdata('save');?>
+  <?php echo $this->session->flashdata('update');?>
+  <?php echo $this->session->flashdata('delete');?>
   <div class="card">
     <div class="card-header">
     <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i><strong> DATA PASIEN SUSPECT (POSITIF) COVID 19 </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
-        <a href="#" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
+        <a href="<?php echo base_url()?>Suspect/create_suspect" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
     <div class="card-block">
@@ -63,23 +66,27 @@
               </td>
               <td><?php echo $item->rumah_sakit ?></td>
               <td>
-                <div class="btn-group dropdown-split-primary">
-                  <button type="button" class="btn btn-primary btn-sm"><i class="icofont icofont-ui-edit"></i></button>
-                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle primary</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Edit</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Delete</a>
-                </div>
                 <div class="btn-group dropdown-split-inverse">
                   <button type="button" class="btn btn-inverse btn-sm"><i class="icofont icofont-exchange"></i></button>
                   <button type="button" class="btn btn-inverse btn-sm dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle primary</span>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Send ODP</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Send Suspect</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Update Status</a>
+                    <a data-toggle="modal" class="dropdown-item waves-effect waves-light" href="" data-target="#update_suspect" onclick="updatesuspect(
+                      '<?php echo $item->id_suspect ?>',
+                      '<?php echo $item->nama ?>',
+                      '<?php echo $item->gender ?>',
+                      '<?php echo $item->umur ?>',
+                      '<?php echo $item->alamat ?>',
+                      '<?php echo $item->kontak ?>',
+                      '<?php echo $item->id_rs ?>',
+                      '<?php echo $item->id_kabupaten ?>',
+                      '<?php echo $item->status ?>',
+                      '<?php echo $item->is_from ?>',
+                      '<?php echo $item->date_created ?>'
+                    )">Edit</a>
+                    <a class="dropdown-item waves-effect waves-light" href="<?php echo base_url()?>Suspect/delete_suspect/<?php echo $item->id_suspect ?>">Delete</a>
                 </div>
               </td>
             </tr>
@@ -90,3 +97,39 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="update_suspect" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title"><i class="feather icon-edit"></i> Edit Item </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <?php $this->load->view('suspect/u-suspect') ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+   function updatesuspect(id_suspect,nama,gender,umur,alamat,kontak,id_rs,id_kabupaten,status,is_from,date_created)
+   {
+     $('#uid').val(id_suspect);
+     $('#unama').val(nama);
+     $('#ugender').val(gender);
+     $('#uumur').val(umur);
+     $('#ualamat').val(alamat);
+     $('#ukontak').val(kontak);
+     $('#uidrs').val(id_rs);
+     $('#uidkabupaten').val(id_kabupaten);
+     $('#ustatus').val(status);
+     $('#isfrom').val(is_from);
+     $('#datecreated').val(date_created);
+   }
+</script>

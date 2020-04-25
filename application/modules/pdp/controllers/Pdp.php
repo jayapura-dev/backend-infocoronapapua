@@ -146,5 +146,30 @@ class Pdp extends MX_Controller{
     );
     redirect('Pdp/data_pdp');
   }
+
+  public function delete_pdp($id_pdp)
+  {
+    $data['title'] = 'Hapus Item';
+    $data['detail'] = $this->db->query("SELECT * FROM tb_pdp WHERE id_pdp = '$id_pdp' ")->row_array();
+
+    $this->template->load('backend_site','d-pdp', $data);
+  }
+
+  function delete_pdp_post($id_pdp = 0)
+  {
+    $id_pdp = $this->input->post('id_pdp');
+    $this->M_pdp->delete_pdp($id_pdp);
+
+    $this->session->set_flashdata(
+      "delete",
+      "<div class='alert alert-success'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <i class='icofont icofont-close-line-circled'></i>
+        </button>
+        <strong>Success!</strong> <code> Item telah dihapus.</code>
+      </div>"
+    );
+    redirect('Pdp/data_pdp');
+  }
   
 }

@@ -3,7 +3,7 @@
       <label class="col-sm-2 col-form-label">Nama</label>
       <div class="col-sm-10">
          <input type="hidden" name="id_odp" id="pdpidodp" />
-         <input type="text" name="nama" id="pdpnama" class="form-control" />
+         <input type="text" name="nama" id="pdpnama" class="form-control" readonly="true" />
          <input type="hidden" name="gender" id="pdpgender" />
          <input type="hidden" name="umur" id="pdpumur" />
          <input type="hidden" name="id_kabupaten" id="pdpidkabupaten" />

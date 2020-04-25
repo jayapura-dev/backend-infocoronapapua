@@ -10,8 +10,19 @@ class M_suspect extends CI_model{
         ORDER BY tb_suspect.date_created DESC ");
         return $query->result();
     }
-    function create_suspect()
+    function create_suspect($data)
     {
         $this->db->insert('tb_suspect',$data);
+    }
+
+    function update_suspect($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
+    function delete_suspect($where = 0)
+    {
+        $this->db->delete('tb_suspect', array('id_suspect' => $where));
     }
 }

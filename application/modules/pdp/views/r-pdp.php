@@ -84,7 +84,7 @@
                       '<?php echo $item->is_from ?>',
                       '<?php echo $item->date_created ?>'
                     )">Edit</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Delete</a>
+                    <a class="dropdown-item waves-effect waves-light" href="<?php echo base_url()?>Pdp/delete_pdp/<?php echo $item->id_pdp ?>">Delete</a>
                 </div>
                 </div>
                 <div class="btn-group dropdown-split-inverse">

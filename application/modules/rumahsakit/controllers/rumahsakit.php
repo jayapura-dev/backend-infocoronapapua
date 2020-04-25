@@ -30,7 +30,7 @@ class Rumahsakit extends MX_Controller{
     $lat = $this->input->post('lat');
     $lon = $this->input->post('lon');
     $no_telfon = $this->input->post('no_telfon');
-    $alamat = $this->input->post('alamat');
+    $alamat_rs = $this->input->post('alamat_rs');
     $status_rs = $this->input->post('status_rs');
 
     $data = array(
@@ -39,7 +39,7 @@ class Rumahsakit extends MX_Controller{
       'lat'           => $lat,
       'lon'           => $lon,
       'no_telfon'     => $no_telfon,
-      'alamat_rs'     => $alamat,
+      'alamat_rs'     => $alamat_rs,
       'status_rs'     => $status_rs
     );
 
