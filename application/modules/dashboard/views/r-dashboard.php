@@ -1,3 +1,8 @@
+<script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\chart.js\js\Chart.js"></script>
+<script src="<?php echo base_url()?>assets\backend\files\assets\pages\widget\amchart\amcharts.js"></script>
+<script src="<?php echo base_url()?>assets\backend\files\assets\pages\widget\amchart\serial.js"></script>
+<script src="<?php echo base_url()?>assets\backend\files\assets\pages\widget\amchart\light.js"></script>
+
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
     $positif = $i->Positif;
@@ -100,4 +105,41 @@
         </div>
     </div>
 </div>
+</div>
+
+<div class="row">
+  <div class="col-xl-5 col-md-12">
+        <div class="card table-card">
+            <div class="card-header">
+                <h5>3 Kabupaten/Kota Kasus Tertinggi</h5>
+            </div>
+            <div class="card-block">
+                <div class="table-responsive">
+                    <table class="table table-hover table-borderless">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Kabupaten/Kota</th>
+                          <th>Jumlah Kasus</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php 
+                        $no = 1;
+                        foreach($topsuspect as $t){?>
+                        <tr>
+                          <td><?php echo $no++ ?></td>
+                          <td class="text-uppercase"><?php echo $t->nama_kab ?></td>
+                          <td class="text-center"><label class="badge badge-primary"><?php echo $t->jumlah_suspect ?></label></td>
+                        </tr>  
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right  m-r-20">
+                    <a href="#!" class="b-b-primary text-primary">View all Sales Locations </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

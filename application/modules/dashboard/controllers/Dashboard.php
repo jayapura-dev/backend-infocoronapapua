@@ -14,6 +14,7 @@ class dashboard extends MX_Controller{
     $data['title'] = 'Dashboard | Backend';
     $data['suspect'] = $this->M_dashboard->rekap_suspect();
     $data['prosentase'] = $this->M_dashboard->prosentase_suspect();
+    $data['topsuspect'] = $this->M_dashboard->topsuspectkasus();
     $this->template->load('backend_site','r-dashboard',$data);
   }
 }

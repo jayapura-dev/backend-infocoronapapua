@@ -24,4 +24,66 @@ class M_dashboard extends CI_model{
 
         return $query->result();
     }
+
+    function topsuspectkasus()
+    {
+        $query = $this->db->query("SELECT * FROM v_jumlah_suspect
+        ORDER BY jumlah_suspect DESC LIMIT 3; ");
+        return $query->result();
+    }
+
+    function odp_notif()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT COUNT(id_odp) as odp_hari_ini FROM tb_odp WHERE date_created = '$tanggal_sekarang' ");
+        return $query->row_array();
+    }
+
+    function odp_notif_data()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT 
+        COUNT(id_odp) as jo,
+        tb_odp.date_created as date_created,
+        tb_kabupaten.nama_kab as nama_kab,
+        tb_kabupaten.id_kabupaten as id_kabupaten
+        FROM tb_odp 
+        LEFT JOIN tb_kabupaten ON tb_odp.id_kabupaten = tb_kabupaten.id_kabupaten
+        WHERE date_created = '$tanggal_sekarang' 
+        GROUP BY tb_odp.id_kabupaten ");
+
+        return $query->result();
+    }
+
+    function pdp_notif()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT COUNT(id_pdp) as pdp_hari_ini FROM tb_pdp WHERE date_created = '$tanggal_sekarang' 
+        ");
+        return $query->row_array();
+    }
+
+    function pdp_notif_data()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT 
+        COUNT(id_pdp) as jp,
+        tb_pdp.date_created as date_created,
+        tb_kabupaten.nama_kab as nama_kab,
+        tb_kabupaten.id_kabupaten as id_kabupaten
+        FROM tb_pdp
+        LEFT JOIN tb_kabupaten ON tb_pdp.id_kabupaten = tb_kabupaten.id_kabupaten
+        WHERE date_created = '$tanggal_sekarang' 
+        GROUP BY tb_pdp.id_kabupaten ");
+
+        return $query->result();
+    }
+
+    function suspect_notif()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT COUNT(id_suspect) as suspect_hari_ini FROM tb_suspect WHERE date_created = '$tanggal_sekarang' 
+        ");
+        return $query->row_array();
+    }
 }

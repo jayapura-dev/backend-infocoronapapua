@@ -1,7 +1,7 @@
 <?php if ($this->session->userdata('level')=='1') {?>
         <nav class="pcoded-navbar">
             <div class="pcoded-inner-navbar main-menu">
-                <div class="pcoded-navigatio-lavel">Admin</div>
+                
                 <ul class="pcoded-item pcoded-left-item">
                     
                     <li class="">
@@ -25,6 +25,12 @@
                             <li class=" ">
                                 <a href="<?php echo base_url()?>Rumahsakit">
                                     <span class="pcoded-mtext">Rumah Sakit</span>
+                                </a>
+                            </li>
+
+                            <li class=" ">
+                                <a href="<?php echo base_url()?>Users">
+                                    <span class="pcoded-mtext">Users</span>
                                 </a>
                             </li>
 

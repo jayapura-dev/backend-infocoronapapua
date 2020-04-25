@@ -10,7 +10,7 @@
                   </li>
                   <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                   </li>
-                  <li class="breadcrumb-item"><a href="#!">Data Rumah Sakit</a>
+                  <li class="breadcrumb-item"><a href="#!">Users</a>
                   </li>
               </ul>
           </div>
@@ -22,9 +22,9 @@
   <?php echo $this->session->flashdata('save');?>
   <div class="card">
     <div class="card-header">
-      <i class="icofont icofont-hospital"></i> <strong> DATA RUMAH SAKIT DI PROVINSI PAPUA </strong>
+      <i class="icofont icofont-ui-unlock"></i> <strong> DATA USERS PENGGUNA </strong>
       <div class="card-header-right">
-        <a href="<?php echo base_url()?>Rumahsakit/create_rs" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
+        <a href="<?php echo base_url()?>Users/create_user" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
     <div class="card-block">
@@ -33,25 +33,33 @@
           <thead>
             <tr>
               <th class="col-md-1">No</th>
-              <th>Kab/Kota</th>
-              <th>Rumah Sakit</th>
-              <th>No Telfon</th>
-              <th>Alamat</th>
+              <th>Users</th>
+              <th>Level</th>
+              <th>Kabupaten</th>
               <th>Status</th>
+              <th>Kontak</th>
+              <th>Email</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <?php 
             $no = 1;
-            foreach($rs as $item){?>
+            foreach($users as $item){?>
             <tr>
               <td><?php echo $no++ ?></td>
+              <td><?php echo $item->nama ?></td>
+              <td>
+                <?php if($item->id_level == '1'):?>
+                  <label class="label label-success">Administrator</label>
+                <?php else: ?>
+                  <label class="label label-primary">User</label>
+                <?php endif ?>
+              </td>
               <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
-              <td class="text-uppercase"><?php echo $item->rumah_sakit ?></td>
-              <td><?php echo $item->no_telfon ?></td>
-              <td><?php echo $item->alamat_rs ?></td>
-              <td><?php echo $item->status_rs ?></td>
+              <td><?php echo $item->status ?></td>
+              <td><?php echo $item->kontak ?></td>
+              <td><?php echo $item->email ?></td>
               <td>
                 <div class="btn-group dropdown-split-primary">
                   <button type="button" class="btn btn-primary btn-sm"><i class="icofont icofont-ui-edit"></i></button>

@@ -21,7 +21,7 @@
 <div class="page-body">
   <div class="card">
     <div class="card-header">
-      <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> REKAP DATA PER KABUPATEN / KOTA </strong>
+      <i class="icofont icofont-job-search"></i> <strong> REKAP DATA PER KABUPATEN / KOTA </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>

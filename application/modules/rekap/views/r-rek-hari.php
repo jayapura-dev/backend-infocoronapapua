@@ -22,7 +22,7 @@
   <?php echo $this->session->flashdata('save');?>
   <div class="card">
     <div class="card-header">
-      <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong>REKAP PER HARI </strong>
+      <i class="icofont icofont-document-search"></i></i> <strong>REKAP PER HARI </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>

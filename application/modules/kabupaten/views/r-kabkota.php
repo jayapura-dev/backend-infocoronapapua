@@ -21,7 +21,7 @@
 <div class="page-body">
   <div class="card">
     <div class="card-header">
-      <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> DATA KABUPATEN DI PROVINSI PAPUA </strong>
+      <i class="icofont icofont-cube"></i> <strong> DATA KABUPATEN DI PROVINSI PAPUA </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
         <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
