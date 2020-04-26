@@ -211,4 +211,68 @@ class Odp extends MX_Controller{
     );
     redirect('Odp/data_odp');
   }
+
+  public function print_odp()
+  {
+    $data['title'] = 'Print ODP';
+    $data['odp'] = $this->M_odp->odp();
+
+    $this->load->view('p-odp',$data);
+  }
+
+  // Level Users:
+
+  public function user_data_odp()
+  {
+    $data['title'] = 'Data ODP';
+    $data['odp'] = $this->M_odp->odp_user();
+    $data['rslist'] = $this->db->query("SELECT * FROM tb_rs_rujukan")->result();
+    $data['kabupatenlist'] = $this->db->query("SELECT * FROM tb_kabupaten")->result();
+    $this->template->load('backend_site','users/r-odp', $data);
+  }
+
+  public function user_create_odp()
+  {
+    $data['title'] = 'Tambah ODP';
+    $data['kabupatenlist'] = $this->db->query("SELECT * FROM tb_kabupaten")->result();
+    $this->template->load('backend_site','users/c-odp', $data);
+  }
+
+  function user_create_odp_post()
+  {
+    $nama = $this->input->post('nama');
+    $gender = $this->input->post('gender');
+    $umur = $this->input->post('umur');
+    $alamat = $this->input->post('alamat');
+    $no_kontak = $this->input->post('no_kontak');
+    $id_kabupaten = $this->input->post('id_kabupaten');
+    $mulai_dp = $this->input->post('mulai_dp');
+    $berahir_dp = $this->input->post('berahir_dp');
+    $date_created = $this->input->post('date_created');
+
+    $data = array(
+      'nama'        => $nama,
+      'gender'      => $gender,
+      'umur'        => $umur,
+      'alamat'      => $alamat,
+      'no_kontak'   => $no_kontak,
+      'id_kabupaten'=> $id_kabupaten,
+      'mulai_dp'    => $mulai_dp,
+      'berahir_dp'  => $berahir_dp,
+      'date_created'=> $date_created
+    );
+
+    $this->M_odp->create_odp($data);
+
+    $this->session->set_flashdata(
+      "save",
+      "<div class='alert alert-success'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <i class='icofont icofont-close-line-circled'></i>
+        </button>
+        <strong>Success!</strong> <code> Item Berhasil Ditambah</code>
+      </div>"
+    );
+    redirect('Odp/user_data_odp');
+  }
 }

@@ -28,7 +28,7 @@
       <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i> <strong> DATA PASIEN DALAM PENGAWASAN (PDP) </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
-        <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
+        <a href="<?php echo base_url()?>Pdp/print_pdp" title="Print" target="_blank"><i class="icofont icofont-printer"></i></a>
         <a href="<?php echo base_url()?>Pdp/create_pdp" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
@@ -53,7 +53,7 @@
             foreach($pdp as $item){?>
             <tr>
               <td><?php echo $no++ ?></td>
-              <td class="uppercase"><?php echo $item->nama_kab ?></td>
+              <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
               <td><?php echo $item->nama ?></td>
               <td><?php echo $item->umur ?></td>
               <td class="center">

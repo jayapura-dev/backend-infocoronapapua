@@ -17,7 +17,7 @@
     <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
     <!-- Favicon icon -->
-    <link rel="icon" href="<?php echo base_url()?>assets\backend\images\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url()?>assets\backend\images\coronaicon1.png" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\pages\data-table\css\buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\css\buttons.dataTables.min.css">
     
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\css\style.css">
@@ -85,8 +86,8 @@
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu"></i>
                         </a>
-                        <a href="index-1.htm">
-                            <img class="img-fluid" src="..\files\assets\images\logo.png" alt="Theme-Logo">
+                        <a href="<?php echo base_url()?>dashboard">
+                            <img class="img-fluid" src="<?php echo base_url()?>assets\backend\images\logodashboard.png" alt="Theme-Logo">
                         </a>
                         <a class="mobile-options">
                             <i class="feather icon-more-horizontal"></i>
@@ -116,7 +117,7 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="<?php echo base_url()?>assets\backend\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>John Doe</span>
+                                        <span><?php echo $this->session->userdata('nama_lengkap') ?></span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -336,28 +337,27 @@
     <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\jszip.min.js"></script>
     <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\pdfmake.min.js"></script>
     <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\vfs_fonts.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\js\dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\js\buttons.flash.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\js\jszip.min.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\data-table\extensions\buttons\js\vfs_fonts.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\js\buttons.colVis.min.js"></script>
     <script src="<?php echo base_url()?>assets\bower_components\datatables.net-buttons\js\buttons.print.min.js"></script>
     <script src="<?php echo base_url()?>assets\bower_components\datatables.net-buttons\js\buttons.html5.min.js"></script>
     <script src="<?php echo base_url()?>assets\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url()?>assets\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js"></script>
     <script src="<?php echo base_url()?>assets\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
 
-<script src="<?php echo base_url()?>assets\backend\pages\data-table\js\data-table-custom.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\js\data-table-custom.js"></script>
 
     <!-- jquery slimscroll js -->
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
     <!-- modernizr js -->
     <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\modernizr\js\modernizr.js"></script>
-    <!-- Chart js -->
-    <script type="text/javascript" src="<?php echo base_url()?>assets\bower_components\chart.js\js\Chart.js"></script>
-    <!-- amchart js -->
-    <script src="<?php echo base_url()?>assets\backend\pages\widget\amchart\amcharts.js"></script>
-    <script src="<?php echo base_url()?>assets\backend\pages\widget\amchart\serial.js"></script>
-    <script src="<?php echo base_url()?>assets\backend\pages\widget\amchart\light.js"></script>
-    <script src="<?php echo base_url()?>assets\backend\js\jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets\backend\js\SmoothScroll.js"></script>
-    <script src="<?php echo base_url()?>assets\backend\js\pcoded.min.js"></script>
+    
     <!-- custom js -->
+    <script src="<?php echo base_url()?>assets\backend\pages\data-table\extensions\buttons\js\extension-btns-custom.js"></script>
+    <script src="<?php echo base_url()?>assets\backend\js\pcoded.min.js"></script>
     <script src="<?php echo base_url()?>assets\backend\js\vartical-layout.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\backend\pages\dashboard\custom-dashboard.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\backend\js\script.min.js"></script>

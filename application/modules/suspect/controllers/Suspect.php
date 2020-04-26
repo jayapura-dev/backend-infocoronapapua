@@ -135,4 +135,12 @@ class Suspect extends MX_Controller{
     );
     redirect('Suspect/data_suspect');
   }
+
+  public function print_suspect()
+  {
+    $data['title'] = 'Print Data Suspect';
+    $data['suspect'] = $this->M_suspect->suspect();
+
+    $this->load->view('p-suspect', $data);
+  }
 }

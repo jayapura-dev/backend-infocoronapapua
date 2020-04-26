@@ -1,3 +1,4 @@
+
 <div class="page-header">
   <div class="row align-items-end">
       <div class="col-lg-12">
@@ -24,7 +25,7 @@
       <i class="icofont icofont-job-search"></i> <strong> REKAP DATA PER KABUPATEN / KOTA </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
-        <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
+        <a href="<?php echo base_url()?>Rekap/print_kabkota" title="Print" target="_blank"><i class="icofont icofont-printer"></i></a>
       </div>
     </div>
     <div class="card-block">

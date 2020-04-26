@@ -16,6 +16,14 @@ class Rekap extends MX_Controller{
     $this->template->load('backend_site','r-rek-kabkota', $data);
   }
 
+  public function print_kabkota()
+  {
+    $data['title'] = 'Print Rekap Per Kabupaten/Kota';
+    $data['kabkota'] = $this->M_rekap->rekapkabkota();
+
+    $this->load->view('p-rek-kabkota',$data);
+  }
+
   public function rekap_hari()
   {
     $data['title'] = 'Rekap Per Hari';

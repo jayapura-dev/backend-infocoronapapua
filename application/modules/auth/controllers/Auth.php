@@ -28,6 +28,7 @@ class auth extends MX_Controller{
 			$data['level'] = $admin->level;
 			$data['id_user'] = $admin->id_user;
 			$data['nama_lengkap'] = $admin->nama_lengkap;
+			$data['id_kabupaten'] = $admin->id_kabupaten;
 			$data['login'] = TRUE;
 			$this->session->set_userdata($data);
 			if ($this->session->userdata('level')=='1'){
@@ -35,7 +36,7 @@ class auth extends MX_Controller{
 			}
 		elseif ($this->session->userdata('level')=='2'){
 		//helper_log("login", "Login ke applikasi");
-		  redirect('home');
+		  redirect('dashboard');
 		 }
 		}
 		else {

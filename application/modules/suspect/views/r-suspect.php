@@ -25,7 +25,7 @@
     <i class="icofont icofont-boy"></i> <i class="icofont icofont-girl-alt"></i><strong> DATA PASIEN SUSPECT (POSITIF) COVID 19 </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
-        <a href="#" title="Print"><i class="icofont icofont-printer"></i></a>
+        <a href="<?php echo base_url()?>Suspect/print_suspect" title="Print" target="_blank"><i class="icofont icofont-printer"></i></a>
         <a href="<?php echo base_url()?>Suspect/create_suspect" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
@@ -37,7 +37,7 @@
             <tr>
               <th class="col-md-1">No</th>
               <th>Kab/Kota</th>
-              <th></th>Nama</th>
+              <th>Nama</th>
               <th class="col-md-1">Umur</th>
               <th>Gender</th>
               <th>Status</th>

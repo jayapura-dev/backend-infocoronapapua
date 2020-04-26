@@ -58,8 +58,8 @@ class M_dashboard extends CI_model{
     function pdp_notif()
     {
         $tanggal_sekarang = date('y-m-d');
-        $query = $this->db->query("SELECT COUNT(id_pdp) as pdp_hari_ini FROM tb_pdp WHERE date_created = '$tanggal_sekarang' 
-        ");
+        $query = $this->db->query("SELECT COUNT(id_pdp) as pdp_hari_ini FROM tb_pdp WHERE date_created = '$tanggal_sekarang' ");
+       
         return $query->row_array();
     }
 
@@ -82,8 +82,24 @@ class M_dashboard extends CI_model{
     function suspect_notif()
     {
         $tanggal_sekarang = date('y-m-d');
-        $query = $this->db->query("SELECT COUNT(id_suspect) as suspect_hari_ini FROM tb_suspect WHERE date_created = '$tanggal_sekarang' 
-        ");
+        $query = $this->db->query("SELECT COUNT(id_suspect) as suspect_hari_ini FROM tb_suspect WHERE date_created = '$tanggal_sekarang' ");
+       
         return $query->row_array();
+    }
+
+    function suspect_notif_data()
+    {
+        $tanggal_sekarang = date('y-m-d');
+        $query = $this->db->query("SELECT 
+        COUNT(id_suspect) as js,
+        tb_suspect.date_created as date_created,
+        tb_kabupaten.nama_kab as nama_kab,
+        tb_kabupaten.id_kabupaten as id_kabupaten
+        FROM tb_suspect
+        LEFT JOIN tb_kabupaten ON tb_suspect.id_kabupaten = tb_kabupaten.id_kabupaten
+        WHERE date_created = '$tanggal_sekarang' 
+        GROUP BY tb_suspect.id_kabupaten ");
+
+        return $query->result();
     }
 }

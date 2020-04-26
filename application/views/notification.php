@@ -6,6 +6,7 @@ $suspect = $this->M_dashboard->suspect_notif();
 
 $odp_data = $this->M_dashboard->odp_notif_data();
 $pdp_data = $this->M_dashboard->pdp_notif_data();
+$suspect_data = $this->M_dashboard->suspect_notif_data();
 
 ?>
 
@@ -13,16 +14,16 @@ $pdp_data = $this->M_dashboard->pdp_notif_data();
     <div class="dropdown-primary dropdown">
         <div class="dropdown-toggle" data-toggle="dropdown">
         <?php if($odp['odp_hari_ini'] == '0'):?>
-            <i class="feather icon-user"></i>
+            <i class="feather icon-users"></i>
           <?php else: ?>
-            <i class="feather icon-user"></i>
-            <span class="badge bg-c-yellow"><?php echo $odp['odp_hari_ini'] ?></span>
+            <i class="feather icon-users"></i>
+            <span class="badge bg-c-green"><?php echo $odp['odp_hari_ini'] ?></span>
           <?php endif ?>
         </div>
         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
             <li>
                 <h6>Orang Dalam Pantauan</h6>
-                <label class="label label-danger">New Hari ini</label>
+                <label class="label label-danger">Terbaru</label>
             </li>
             <?php foreach($odp_data as $o){?>
             <li>
@@ -44,16 +45,16 @@ $pdp_data = $this->M_dashboard->pdp_notif_data();
     <div class="dropdown-primary dropdown">
         <div class="dropdown-toggle" data-toggle="dropdown">
           <?php if($pdp['pdp_hari_ini'] == '0'):?>
-            <i class="feather icon-user"></i>
+            <i class="feather icon-bell"></i>
           <?php else: ?>
-            <i class="feather icon-user"></i>
-            <span class="badge bg-c-pink"><?php echo $pdp['pdp_hari_ini'] ?></span>
+            <i class="feather icon-bell"></i>
+            <span class="badge bg-c-blue"><?php echo $pdp['pdp_hari_ini'] ?></span>
           <?php endif ?>
         </div>
         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
             <li>
                 <h6>Pasien Dalam Pengawasan</h6>
-                <label class="label label-danger">New</label>
+                <label class="label label-danger">Terbaru</label>
             </li>
             <?php foreach($pdp_data as $pd){?>
             <li>
@@ -75,27 +76,29 @@ $pdp_data = $this->M_dashboard->pdp_notif_data();
     <div class="dropdown-primary dropdown">
         <div class="dropdown-toggle" data-toggle="dropdown">
           <?php if($suspect['suspect_hari_ini'] == '0'):?>
-            <i class="feather icon-user"></i>
+            <i class="feather feather icon-bell"></i>
           <?php else: ?>
-            <i class="feather icon-user"></i>
-            <span class="badge bg-c-red"><?php echo $suspect['suspect_hari_ini'] ?></span>
+            <i class="feather feather icon-bell"></i>
+            <span class="badge bg-c-yellow"><?php echo $suspect['suspect_hari_ini'] ?></span>
           <?php endif ?>
         </div>
         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
             <li>
-                <h6>Pasien Dalam Pengawasan</h6>
-                <label class="label label-danger">New</label>
+                <h6>Pasien Suspect </h6>
+                <label class="label label-danger">Terbaru</label>
             </li>
+            <?php foreach($suspect_data as $su){?>
             <li>
                 <div class="media">
-                    <img class="d-flex align-self-center img-radius" src="..\files\assets\images\avatar-4.jpg" alt="Generic placeholder image">
+                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\avatar-4.jpg" alt="Generic placeholder image">
                     <div class="media-body">
-                        <h5 class="notification-user">John Doe</h5>
-                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                        <span class="notification-time">30 minutes ago</span>
+                        <h5 class="notification-user"><?php echo $su->nama_kab ?></h5>
+                        <p class="notification-msg">Ada Penambahan <strong><?php echo $su->js ?></strong> Suspect</p>
+                        <span class="notification-time"><?php echo $su->date_created ?></span>
                     </div>
                 </div>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </li>

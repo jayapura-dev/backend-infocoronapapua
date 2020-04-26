@@ -28,8 +28,8 @@
       <i class="icofont icofont-users-social"></i><strong> DATA ORANG DALAM PANTAUAN (ODP) </strong>
       <div class="card-header-right">
         <a href="#" title="Export Excel"><i class="icofont icofont-file-excel"></i></a>
-        <a href="<?php echo base_url()?>Odp/print_odp" title="Print" target="_blank"><i class="icofont icofont-printer"></i></a>
-        <a href="<?php echo base_url()?>Odp/create_odp" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
+        <a href="<?php echo base_url()?>Odp/user_print_odp" title="Print" target="_blank"><i class="icofont icofont-printer"></i></a>
+        <a href="<?php echo base_url()?>Odp/user_create_odp" title="Tambah Data"><i class="icofont icofont-plus-square"></i></a>
       </div>
     </div>
     <div class="card-block">
