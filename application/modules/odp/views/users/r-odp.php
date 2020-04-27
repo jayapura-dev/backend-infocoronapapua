@@ -83,7 +83,7 @@
                       '<?php echo $item->id_kabupaten ?>',
                       '<?php echo $item->date_created ?>'
                     )">Edit</a>
-                    <a class="dropdown-item waves-effect waves-light small" href="<?php echo base_url()?>Odp/delete_odp/<?php echo $item->id_odp ?>">Delete</a>
+                    <a class="dropdown-item waves-effect waves-light small" href="<?php echo base_url()?>Odp/user_delete_odp/<?php echo $item->id_odp ?>">Delete</a>
                 </div>
                 <div class="btn-group dropdown-split-inverse">
                   <button type="button" class="btn btn-inverse btn-sm"><i class="icofont icofont-exchange"></i></button>
@@ -130,7 +130,7 @@
                </button>
             </div>
             <div class="modal-body">
-               <?php $this->load->view('odp/u-odp') ?>
+               <?php $this->load->view('odp/users/u-odp') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
@@ -160,7 +160,7 @@
                 </p>
                   
               </div>
-               <?php $this->load->view('odp/odp_sent_pdp') ?>
+               <?php $this->load->view('odp/users/odp_sent_pdp') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
@@ -186,7 +186,7 @@
                 <p>
                   <strong>Peringatan!</strong> <code>Anda Akan Mengirimkan Item ODP ini Ke Data Pasien Suspect Apakah Anda Yakin ? Jika Ya, Lengkapi / Pilih <strong>Rumah Sakit</strong> Tempat Pasien Di Rawat.</code></p>
               </div>
-               <?php $this->load->view('odp/odp_sent_suspect') ?>
+               <?php $this->load->view('odp/users/odp_sent_suspect') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>

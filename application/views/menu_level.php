@@ -82,9 +82,9 @@
                         
                     </ul>
                     <li class="">
-                        <a href="#">
+                        <a href="<?php echo base_url()?>Backup">
                             <span class="pcoded-micon"><i class="icofont icofont-database"></i></span>
-                            <span class="pcoded-mtext">Backup DB</span>
+                            <span class="pcoded-mtext">Backup</span>
                         </a>
                     </li>
                 </ul>
@@ -143,6 +143,4 @@
                 </ul>
             </div>
         </nav>
-
-
  <?php } ?>

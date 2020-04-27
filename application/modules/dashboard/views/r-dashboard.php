@@ -108,38 +108,100 @@
 </div>
 
 <div class="row">
-  <div class="col-xl-5 col-md-12">
-        <div class="card table-card">
-            <div class="card-header">
-                <h5>3 Kabupaten/Kota Kasus Tertinggi</h5>
-            </div>
-            <div class="card-block">
-                <div class="table-responsive">
-                    <table class="table table-hover table-borderless">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Kabupaten/Kota</th>
-                          <th>Jumlah Kasus</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php 
-                        $no = 1;
-                        foreach($topsuspect as $t){?>
-                        <tr>
-                          <td><?php echo $no++ ?></td>
-                          <td class="text-uppercase"><?php echo $t->nama_kab ?></td>
-                          <td class="text-center"><label class="badge badge-primary"><?php echo $t->jumlah_suspect ?></label></td>
-                        </tr>  
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-right  m-r-20">
-                    <a href="#!" class="b-b-primary text-primary">View all Sales Locations </a>
-                </div>
-            </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card table-card">
+         <div class="card-header">
+            <h5>ODP Per Kabupaten/Kota</h5>
+       </div>
+       <div class="card-block">
+        <div class="table-responsive">
+           <table class="table small table-hover table-borderless">
+             <thead>
+               <tr>
+                 <th>No</th>
+                 <th>Kabupaten/Kota</th>
+                 <th>ODP</th>
+               </tr>
+             </thead>
+             <tbody>
+               <?php
+               $no = 1; 
+               foreach($odp as $item){?>
+               <tr>
+                 <td><?php echo $no++ ?></td>
+                 <td><?php echo $item->nama_kab ?></td>
+                 <td><label class="badge badge-primary"><?php echo $item->jumlah_odp ?></label></td>
+               </tr>
+               <?php } ?>
+             </tbody>
+           </table>
         </div>
+      </div>
+      </div>
+      
+    </div>
+
+    <div class="col-xl-4 col-md-12">
+      <div class="card table-card">
+         <div class="card-header">
+            <h5>PDP Per Kabupaten/Kota</h5>
+       </div>
+       <div class="card-block">
+        <div class="table-responsive">
+           <table class="table small table-hover table-borderless">
+             <thead>
+               <tr>
+                 <th>No</th>
+                 <th>Kabupaten/Kota</th>
+                 <th>PDP</th>
+               </tr>
+             </thead>
+             <tbody>
+               <?php
+               $no = 1; 
+               foreach($pdp as $item){?>
+               <tr>
+                 <td><?php echo $no++ ?></td>
+                 <td><?php echo $item->nama_kab ?></td>
+                 <td><label class="badge badge-primary"><?php echo $item->jumlah_pdp ?></label></td>
+               </tr>
+               <?php } ?>
+             </tbody>
+           </table>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-md-12">
+      <div class="card table-card">
+         <div class="card-header">
+            <h5>Pasien Suspect Kabupaten/Kota</h5>
+       </div>
+       <div class="card-block">
+        <div class="table-responsive">
+           <table class="table small table-hover table-borderless">
+             <thead>
+               <tr>
+                 <th>No</th>
+                 <th>Kabupaten/Kota</th>
+                 <th>Suspect</th>
+               </tr>
+             </thead>
+             <tbody>
+               <?php
+               $no = 1; 
+               foreach($sus as $pos){?>
+               <tr>
+                 <td><?php echo $no++ ?></td>
+                 <td><?php echo $pos->nama_kab ?></td>
+                 <td><label class="badge badge-primary"><?php echo $pos->jumlah_suspect ?></label></td>
+               </tr>
+               <?php } ?>
+             </tbody>
+           </table>
+        </div>
+      </div>
+      </div>
     </div>
 </div>

@@ -181,7 +181,7 @@
     $('#ukontak').val(kontak);
     $('#uidrs').val(id_rs);
     $('#uidkabupaten').val(id_kabupaten);
-    $('#uisfrom').val(is_from);
+    $('#is_from').val(is_from);
     $('#datecreated').val(date_created);
   }
   

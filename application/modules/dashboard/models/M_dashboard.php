@@ -102,4 +102,25 @@ class M_dashboard extends CI_model{
 
         return $query->result();
     }
+
+    function odp_kabkota()
+    {
+        $query = $this->db->query("SELECT * FROM v_jumlah_odp ORDER BY jumlah_odp DESC ");
+
+        return $query->result();
+    }
+
+    function pdp_kabkota()
+    {
+        $query = $this->db->query("SELECT * FROM v_jumlah_pdp ORDER BY jumlah_pdp DESC ");
+
+        return $query->result();
+    }
+
+    function suspect_kabkota()
+    {
+        $query = $this->db->query("SELECT * FROM v_jumlah_suspect ORDER BY jumlah_suspect DESC ");
+
+        return $query->result();
+    }
 }

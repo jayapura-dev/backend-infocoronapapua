@@ -138,31 +138,25 @@
 
 ## Halaman Yang Tersedia :
   - [x] Dashboard
-  - [x] CRUD Kabupaten
-  - [x] CRUD Pasien Positif
-  - [x] CRUD Rumah Sakit Rujukan
-  - [x] CRUD Informasi harian Kasus Covid 19 Prov Papua (Papan Informasi)
-  - [x] ODP (Orang Dalam Pantauan)
-  - [x] Grafik Statistik Data Per Hari
-  - [x] Registrasi rest-auth API User Untuk Token Authorization
-  - [x] Login rest-auth untuk Token Authorization
+  - [x] Data Kabupaten
+  - [x] CRUD Rumah Sakit
+  - [x] CRUD ODP
+  - [x] CRUD PDP
+  - [x] CRUD Suspect
+  - [x] Rekap Per Kabupaten
+  - [x] Notifikasi ODP, PDP, SUSPECT Per hari (Jika ada inputan Baru)
+  - [x] Send Data item ODP Ke PDP
+  - [x] Send Data item ODP Ke Suspect
+  - [x] Send Data item PDP Ke Suspect
+  - [x] Print out ODP, PDP, SUSPECT
+  - [x] Backup Database & File
 
 --------------------------------------------------------------------------------------------------------------
 
 ## Yang Akan dikerjakan : 
-  - [ ] Auth API Via DFR ke Frontend
-  - [ ] GraphQL untuk Query API (Sudah ada pada Backend tapi masih pke DRF Menggunakan Filter)
-  - [ ] ODP, PDP dan Positif Data Analystic
-  - [ ] Peta (Maps) Sebaran Covid 19 Kusus Papua.
-
+  - [ ] Grafik Line Untuk ODP, PDP dan Suscpect
 ---------------------------------------------------------------------------------------------------------------
 
-## Screen :
-  - ![positif](https://live.staticflickr.com/65535/49737626967_26cb3de065_z.jpg)
-  -----------------------------------------------------------------------------------------------------------
-  - ![dashboard](https://live.staticflickr.com/65535/49737294806_ab96efe58c_z.jpg)
-
--------------------------------------------------------------------------------------------------------------
 
 ## Kontribusi Data & Project :
   - Saya Belum Memiliki Sumber Data yang benar" valid.
