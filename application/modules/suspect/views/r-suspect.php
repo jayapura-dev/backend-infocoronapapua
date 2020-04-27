@@ -58,7 +58,7 @@
               <td class="center">
                 <?php if($item->status == 'POSITIF'): ?>
                   <label class="label label-danger">POSITIF</label>
-                <?php elseif($item->status == 'MENINGAAL'): ?>
+                <?php elseif($item->status == 'MENINGGAL'): ?>
                   <label class="label label-inverse">MENINGGAL</label>
                 <?php else: ?>
                   <label class="label label-success">SEMBUH</label>
