@@ -3,9 +3,10 @@
     margin: 5px;
     padding: 20px 10px;
     background-color: #fff;
-    height: 100px;
+    height: 110px;
     border-radius: 5px;
     transition: .3s linear all;
+    font-family: Lucida Console, Courier, monospace;
   }
 
   .card-counter:hover{
@@ -13,23 +14,24 @@
     transition: .3s linear all;
   }
 
-  .card-counter.primary{
-    background-color: #007bff;
+  .card-counter.yellow{
+    background-color: #FFA500;
     color: #FFF;
+    
   }
 
-  .card-counter.danger{
-    background-color: #ef5350;
+  .card-counter.pink{
+    background-color: #B22222;
     color: #FFF;
   }  
 
-  .card-counter.success{
-    background-color: #66bb6a;
+  .card-counter.lightgreen{
+    background-color: #20B2AA;
     color: #FFF;
   }  
 
-  .card-counter.info{
-    background-color: #26c6da;
+  .card-counter.darkgreen{
+    background-color: #C71585;
     color: #FFF;
   }  
 
@@ -40,19 +42,33 @@
 
   .card-counter .count-numbers{
     position: absolute;
-    right: 35px;
-    top: 20px;
-    font-size: 32px;
+    right: 45px;
+    top: 25px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    display: block;
+  }
+
+  .card-counter .count-prosentase{
+    position: absolute;
+    right: 45px;
+    top: 50px;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
     display: block;
   }
 
   .card-counter .count-name{
     position: absolute;
-    right: 35px;
-    top: 65px;
+    right: 45px;
+    top: 75px;
     font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
     text-transform: capitalize;
     opacity: 0.5;
     display: block;
-    font-size: 18px;
+    font-size: 15px;
   }

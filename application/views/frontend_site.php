@@ -9,7 +9,7 @@
     <meta name="description" content="Landing page template for creative dashboard">
     <meta name="keywords" content="Landing page template">
     <!-- Favicon icon -->
-    <link rel="icon" href="<?php echo base_url()?>assets\frontend\logos\favicon.ico" type="image/png" sizes="16x16">
+    <link rel="icon" href="<?php echo base_url()?>assets\backend\images\coronaicon1.png" type="image/png" sizes="16x16">
     <!-- Bootstrap -->
     <link href="<?php echo base_url()?>assets\frontend\css\bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <!-- Font -->
@@ -29,6 +29,7 @@
     <!-- Main Style css -->
     <link href="<?php echo base_url()?>assets\frontend\css\style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<?php echo base_url()?>assets\frontend\css\card.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()?>assets\frontend\css\card2.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -38,7 +39,7 @@
         <div class="container">
              <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand page-scroll" href="#main"><img src="<?php echo base_url()?>assets\frontend\logos\logodashboard.png" alt="adminity Logo"></a>
+                    <a class="navbar-brand page-scroll" href="<?php echo base_url()?>Home"><img src="<?php echo base_url()?>assets\frontend\images\jdev.png" width="140px" alt="jayapuradev Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -47,22 +48,13 @@
                         </ul>
                         <ul class="navbar-nav my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#main">Home</a>
+                                <a class="nav-link page-scroll" href="#main">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#services">Important</a>
-                            </li>
+                                <a class="nav-link page-scroll" href="#services">HOTLINE</a>
+                            </li>  
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#features">Benefits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#reviews">Testimonials</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link page-scroll" href="#features">API For Developer</a>
                             </li>
                         </ul>
                     </div>
@@ -76,16 +68,15 @@
             <div class="footer">
                 <div class="container">
                     <div class="col-md-12 text-center">
-                        <img src="<?php echo base_url()?>assets\frontend\logos\logo.png" alt="Adminty Logo">
+                        <img src="<?php echo base_url()?>assets\frontend\images\jayapura_dev.png" width="20%" alt="jayapuradev Logo">
                         <ul class="footer-menu">
-                            <li><a href="http://demo.com">Site</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href="http://demo.com">Repositoty</a></li>
+                            <li><a href="#">Gitter</a></li>
+                            <li><a href="#">Contribute</a></li>
                         </ul>
                         <div class="footer-text">
                             <p>
-                                Copyright © 2017 Adminty. All Rights Reserved.
+                                Copyright © 2020 JAYAPURA DEV.
                             </p>
                         </div>
                     </div>
