@@ -123,4 +123,11 @@ class M_dashboard extends CI_model{
 
         return $query->result();
     }
+
+    function info_rek_hari()
+    {
+        $query = $this->db->query("SELECT * FROM tb_info_rekap ");
+
+        return $query->result();
+    }
 }
