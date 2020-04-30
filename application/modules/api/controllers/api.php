@@ -10,28 +10,52 @@ class Api extends REST_Controller {
       $this->load->model('M_api');
   }
 
-  function suspect()
+  function index_get()
+  {
+    $kabkota = $this->M_api->rekapkabkota();
+
+    foreach($kabkota as $item){
+        $posts[] = array(
+            'id_kabupaten'  => $item->id_kabupaten,
+            'kabupaten'     => $item->nama_kab,
+            'confirm'       => $item->confirm,
+            'positif'       => $item->positif,
+            'meninggal'     => $item->meninggal,
+            'sembuh'        => $item->sembuh,
+            'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
+        );
+    }
+
+    if ($kabkota) {
+      $this->response([
+        'status'  => true,
+        'kabkota' => $posts
+      ], REST_Controller::HTTP_OK);
+    }
+  }
+
+  function suspect_get()
   {
     $suspect = $this->M_api->suspect();
-    $data['suspect'] = $suspect;
-    $response = array();
-    $posts = array();
 
     foreach($suspect as $item){
         $posts[] = array(
             'id_suspect'    => $item->id_suspect,
-            'nama'          => $item->nama,
             'kabupaten'     => $item->nama_kab,
             'umur'          => $item->umur,
             'gender'        => $item->gender,
             'alamat'        => $item->alamat,
             'rumah_sakit'   => $item->rumah_sakit,
-            'status'        => $status
+            'status'        => $item->status_pasien,
+            'date_created'  => $item->date_created
         );
     }
 
-    $response['suspect'] = $posts;
-    header('Content-Type: application/json');
-    echo json_encode($response,TRUE);
+    if ($suspect) {
+      $this->response([
+        'status'  => true,
+        'suspect' => $posts
+      ], REST_Controller::HTTP_OK);
+    }
   }
 }

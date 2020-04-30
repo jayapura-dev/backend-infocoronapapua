@@ -20,6 +20,12 @@
     
   }
 
+  .card-counter.white{
+    background-color: #FFF;
+    color: #FFF;
+    
+  }
+
   .card-counter.pink{
     background-color: #B22222;
     color: #FFF;

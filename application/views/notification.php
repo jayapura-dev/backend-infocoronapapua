@@ -28,7 +28,7 @@ $suspect_data = $this->M_dashboard->suspect_notif_data();
             <?php foreach($odp_data as $o){?>
             <li>
                 <div class="media">
-                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\avatar-4.jpg" alt="Generic placeholder image">
+                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\kabkota\<?php echo $o->logo ?>" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="notification-user"><?php echo $o->nama_kab ?></h5>
                         <p class="notification-msg">Ada Penambahan <strong><?php echo $o->jo ?></strong> ODP</p>
@@ -59,7 +59,7 @@ $suspect_data = $this->M_dashboard->suspect_notif_data();
             <?php foreach($pdp_data as $pd){?>
             <li>
                 <div class="media">
-                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\avatar-4.jpg" alt="Generic placeholder image">
+                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\kabkota\<?php echo $pd->logo ?>" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="notification-user"><?php echo $pd->nama_kab ?></h5>
                         <p class="notification-msg">Ada Penambahan <strong><?php echo $pd->jp ?></strong> PDP</p>
@@ -90,7 +90,7 @@ $suspect_data = $this->M_dashboard->suspect_notif_data();
             <?php foreach($suspect_data as $su){?>
             <li>
                 <div class="media">
-                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\avatar-4.jpg" alt="Generic placeholder image">
+                    <img class="d-flex align-self-center img-radius" src="<?php echo base_url()?>assets\backend\images\kabkota\<?php echo $su->logo ?>" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="notification-user"><?php echo $su->nama_kab ?></h5>
                         <p class="notification-msg">Ada Penambahan <strong><?php echo $su->js ?></strong> Suspect</p>

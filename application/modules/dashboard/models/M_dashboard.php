@@ -46,7 +46,8 @@ class M_dashboard extends CI_model{
         COUNT(id_odp) as jo,
         tb_odp.date_created as date_created,
         tb_kabupaten.nama_kab as nama_kab,
-        tb_kabupaten.id_kabupaten as id_kabupaten
+        tb_kabupaten.id_kabupaten as id_kabupaten,
+        tb_kabupaten.logo_path as logo
         FROM tb_odp 
         LEFT JOIN tb_kabupaten ON tb_odp.id_kabupaten = tb_kabupaten.id_kabupaten
         WHERE date_created = '$tanggal_sekarang' 
@@ -70,7 +71,8 @@ class M_dashboard extends CI_model{
         COUNT(id_pdp) as jp,
         tb_pdp.date_created as date_created,
         tb_kabupaten.nama_kab as nama_kab,
-        tb_kabupaten.id_kabupaten as id_kabupaten
+        tb_kabupaten.id_kabupaten as id_kabupaten,
+        tb_kabupaten.logo_path as logo
         FROM tb_pdp
         LEFT JOIN tb_kabupaten ON tb_pdp.id_kabupaten = tb_kabupaten.id_kabupaten
         WHERE date_created = '$tanggal_sekarang' 
@@ -94,7 +96,8 @@ class M_dashboard extends CI_model{
         COUNT(id_suspect) as js,
         tb_suspect.date_created as date_created,
         tb_kabupaten.nama_kab as nama_kab,
-        tb_kabupaten.id_kabupaten as id_kabupaten
+        tb_kabupaten.id_kabupaten as id_kabupaten,
+        tb_kabupaten.logo_path as logo
         FROM tb_suspect
         LEFT JOIN tb_kabupaten ON tb_suspect.id_kabupaten = tb_kabupaten.id_kabupaten
         WHERE date_created = '$tanggal_sekarang' 
@@ -128,6 +131,30 @@ class M_dashboard extends CI_model{
     {
         $query = $this->db->query("SELECT * FROM tb_info_rekap ");
 
+        return $query->result();
+    }
+
+    public function get_suspect_kabkota($id_kabupaten = 0)
+    {
+        $query = $this->db->query("SELECT 
+        tb_suspect.id_suspect as id_suspect,
+        tb_suspect.nama as nama,
+        tb_suspect.gender as gender,
+        tb_suspect.umur as umur,
+        tb_suspect.alamat as alamat,
+        tb_suspect.kontak as kontak,
+        tb_suspect.id_rs as id_rs,
+        tb_suspect.id_kabupaten as id_kabupaten,
+        tb_suspect.is_from as is_from,
+        tb_suspect.date_created as date_created,
+        tb_suspect.status as status,
+        tb_kabupaten.nama_kab as nama_kab,
+        tb_rs_rujukan.rumah_sakit as rumah_sakit
+        FROM tb_suspect 
+        LEFT JOIN tb_kabupaten ON tb_suspect.id_kabupaten = tb_kabupaten.id_kabupaten
+        LEFT JOIN tb_rs_rujukan ON tb_suspect.id_rs = tb_rs_rujukan.id_rs
+        WHERE tb_suspect.id_kabupaten = '$id_kabupaten' ");
+        
         return $query->result();
     }
 }

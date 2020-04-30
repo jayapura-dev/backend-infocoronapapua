@@ -22,4 +22,10 @@ class Home extends MX_Controller{
       $data['sus'] = $this->M_home->rekapkabkota();
       $this->template->load('frontend_site','home',$data);
   }
+
+  public function hotline()
+  {
+    $data['title'] = 'Hotline Covid 19 Papua';
+    $this->template->load('frontend_site','hotline',$data);
+  }
 }

@@ -3,6 +3,10 @@
 <script src="<?php echo base_url()?>assets\backend\files\assets\pages\widget\amchart\serial.js"></script>
 <script src="<?php echo base_url()?>assets\backend\files\assets\pages\widget\amchart\light.js"></script>
 
+<script src="<?php echo base_url()?>assets\backend\js\jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets\backend\css\fixed_header_table.css">
+
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
     $positif = $i->Positif;
@@ -115,10 +119,10 @@
        </div>
        <div class="card-block">
         <div class="table-responsive">
-           <table class="table small table-hover table-borderless">
+           <table class="table small table-hover table-bordered fixed_header">
              <thead>
                <tr>
-                 <th>No</th>
+                 <th></th>
                  <th>Kabupaten/Kota</th>
                  <th>ODP</th>
                </tr>
@@ -128,9 +132,11 @@
                $no = 1; 
                foreach($odp as $item){?>
                <tr>
-                 <td><?php echo $no++ ?></td>
-                 <td><?php echo $item->nama_kab ?></td>
-                 <td><label class="badge badge-primary"><?php echo $item->jumlah_odp ?></label></td>
+                  <td>
+                    <img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $item->logo ?>" width="20px" />
+                 </td>
+                 <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
+                 <td class="text-center"><label class="badge badge-primary"><?php echo $item->jumlah_odp ?></label></td>
                </tr>
                <?php } ?>
              </tbody>
@@ -148,10 +154,10 @@
        </div>
        <div class="card-block">
         <div class="table-responsive">
-           <table class="table small table-hover table-borderless">
+           <table class="table small table-hover table-bordered">
              <thead>
                <tr>
-                 <th>No</th>
+                 <th></th>
                  <th>Kabupaten/Kota</th>
                  <th>PDP</th>
                </tr>
@@ -161,9 +167,11 @@
                $no = 1; 
                foreach($pdp as $item){?>
                <tr>
-                 <td><?php echo $no++ ?></td>
-                 <td><?php echo $item->nama_kab ?></td>
-                 <td><label class="badge badge-primary"><?php echo $item->jumlah_pdp ?></label></td>
+                  <td>
+                    <img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $item->logo ?>" width="20px" />
+                 </td>
+                 <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
+                 <td class="text-center"><label class="badge badge-primary"><?php echo $item->jumlah_pdp ?></label></td>
                </tr>
                <?php } ?>
              </tbody>
@@ -180,10 +188,10 @@
        </div>
        <div class="card-block">
         <div class="table-responsive">
-           <table class="table small table-hover table-borderless">
+           <table class="table small table-hover table-bordered fixed_header">
              <thead>
                <tr>
-                 <th>No</th>
+                 <th></th>
                  <th>Kabupaten/Kota</th>
                  <th>Suspect</th>
                </tr>
@@ -193,9 +201,11 @@
                $no = 1; 
                foreach($sus as $pos){?>
                <tr>
-                 <td><?php echo $no++ ?></td>
-                 <td><?php echo $pos->nama_kab ?></td>
-                 <td><label class="badge badge-primary"><?php echo $pos->jumlah_suspect ?></label></td>
+                 <td>
+                    <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
+                 </td>
+                 <td class="text-uppercase"><?php echo $pos->nama_kab ?></td>
+                 <td class="text-center"><label class="badge badge-primary"><?php echo $pos->jumlah_suspect ?></label></td>
                </tr>
                <?php } ?>
              </tbody>
@@ -205,3 +215,34 @@
       </div>
     </div>
 </div>
+
+<div class="modal fade" id="viewsuspectkabkota" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <div class="v_suspect">
+                
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#viewsuspectkabkota').on('show.bs.modal', function (e) {
+        var idkabupaten = $(e.relatedTarget).data('id');
+        $.ajax({
+            type : 'POST',
+            url : '<?php echo base_url();?>dashboard/get_suspect_kabkota/'+idkabupaten,
+            data :  'idkabupaten='+ idkabupaten,
+            success : function(data){
+            $('.v_suspect').html(data);
+            }
+        });
+    });
+  });
+</script>

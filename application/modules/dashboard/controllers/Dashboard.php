@@ -21,4 +21,10 @@ class dashboard extends MX_Controller{
     $this->template->load('backend_site','r-dashboard',$data);
   }
 
+  public function get_suspect_kabkota($id_kabupaten)
+  {
+    $data['kabkotasuspect'] = $this->M_dashboard->get_suspect_kabkota($id_kabupaten);
+    $data['kabupaten'] = $this->db->query("SELECT * FROM tb_kabupaten WHERE id_kabupaten = '$id_kabupaten'")->row_array();
+    $this->load->view('r-kabkota-suspect',$data);
+  }
 }

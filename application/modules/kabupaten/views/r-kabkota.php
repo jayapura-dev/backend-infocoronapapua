@@ -34,6 +34,7 @@
           <thead>
             <tr>
               <th class="col-md-1">No</th>
+              <th>Logo</th>
               <th>Kab/Kota</th>
               <th>Action</th>
             </tr>
@@ -44,6 +45,9 @@
             foreach($kabkota as $item){?>
             <tr>
               <td><?php echo $no++ ?></td>
+              <td class="text-center">
+                <img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $item->logo_path ?>" width="50px" />
+              </td>
               <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
               <td></td>
             </tr>

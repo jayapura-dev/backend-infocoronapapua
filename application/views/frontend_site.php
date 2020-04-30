@@ -51,7 +51,7 @@
                                 <a class="nav-link page-scroll" href="#main">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#services">HOTLINE</a>
+                                <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/hotline">HOTLINE</a>
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link page-scroll" href="#features">API For Developer</a>
