@@ -157,4 +157,28 @@ class M_dashboard extends CI_model{
         
         return $query->result();
     }
+
+    public function get_count_suspect($id_kabupaten)
+    {
+        $query = $this->db->query("SELECT 
+        COUNT(Distinct tb_suspect.id_suspect) as confirm,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'POSITIF' THEN tb_suspect.id_suspect END) as positif,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'SEMBUH' THEN tb_suspect.id_suspect END) as sembuh,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'MENINGGAL' THEN tb_suspect.id_suspect END) as meninggal
+        FROM tb_suspect 
+        WHERE tb_suspect.id_kabupaten = $id_kabupaten ");
+    
+        return $query->row_array();
+    }
+
+    function get_porsentase_suspect($id_kabupaten)
+    {
+        $query = $this->db->query("SELECT
+        positif / jumlah_suspect * 100 as p_positif,
+        sembuh / jumlah_suspect * 100 as p_sembuh,
+        meninggal / jumlah_suspect * 100 as p_meninggal
+        FROM v_jumlah_suspect 
+        WHERE id_kabupaten = '$id_kabupaten' ");
+        return $query->row_array();
+    }
 }

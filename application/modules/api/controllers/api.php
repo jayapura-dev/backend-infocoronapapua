@@ -58,4 +58,45 @@ class Api extends REST_Controller {
       ], REST_Controller::HTTP_OK);
     }
   }
+
+  public function infosuspect_get()
+  {
+    $info = $this->M_api->rekap_suspect();
+
+    foreach($info as $item){
+        $posts[] = array(
+            'confirm'    => $item->Confirm,
+            'positif'    => $item->Positif,
+            'sembuh'     => $item->Sembuh,
+            'meninggal'  => $item->Meninggal
+        );
+    }
+
+    if ($info) {
+      $this->response([
+        'status'  => true,
+        'result'  => $posts
+      ], REST_Controller::HTTP_OK);
+    }
+  }
+
+  public function prosentase_get()
+  {
+    $prosentase = $this->M_api->prosentase_suspect();
+
+    foreach($prosentase as $item){
+        $posts[] = array(
+            'p_positif'   => number_format($item->p_positif,1),
+            'p_sembuh'    => number_format($item->p_sembuh,1),
+            'p_meninggal' => number_format($item->p_meninggal,1)
+        );
+    }
+
+    if ($prosentase) {
+      $this->response([
+        'status'  => true,
+        'result'  => $posts
+      ], REST_Controller::HTTP_OK);
+    }
+  }
 }

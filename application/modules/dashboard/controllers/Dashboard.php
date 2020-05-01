@@ -25,6 +25,8 @@ class dashboard extends MX_Controller{
   {
     $data['kabkotasuspect'] = $this->M_dashboard->get_suspect_kabkota($id_kabupaten);
     $data['kabupaten'] = $this->db->query("SELECT * FROM tb_kabupaten WHERE id_kabupaten = '$id_kabupaten'")->row_array();
+    $data['countsuspect'] = $this->M_dashboard->get_count_suspect($id_kabupaten);
+    $data['prosuspect'] = $this->M_dashboard->get_porsentase_suspect($id_kabupaten);
     $this->load->view('r-kabkota-suspect',$data);
   }
 }

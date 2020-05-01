@@ -1,0 +1,80 @@
+.card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 80px;
+    border-radius: 5px;
+    transition: .3s linear all;
+    font-family: Lucida Console, Courier, monospace;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.yellow{
+    background-color: #FFA500;
+    color: #FFF;
+    
+  }
+
+  .card-counter.white{
+    background-color: #FFF;
+    color: #FFF;
+    
+  }
+
+  .card-counter.pink{
+    background-color: #B22222;
+    color: #FFF;
+  }  
+
+  .card-counter.lightgreen{
+    background-color: #20B2AA;
+    color: #FFF;
+  }  
+
+  .card-counter.darkgreen{
+    background-color: #C71585;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .count-numbers{
+    position: absolute;
+    right: 45px;
+    top: 15px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    display: block;
+  }
+
+  .card-counter .count-prosentase{
+    position: absolute;
+    right: 45px;
+    top: 35px;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    display: block;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    right: 45px;
+    top: 55px;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 12px;
+  }

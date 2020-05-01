@@ -43,7 +43,7 @@
             <div class="row align-items-end">
                 <div class="col-8">
                     <h4 class="text-white"><?php echo $confirm ?></h4>
-                    <h6 class="text-white m-b-0">Confirm</h6>
+                    <h6 class="text-white m-b-0">CONFIRM</h6>
                 </div>
                 <div class="col-4 text-right">
                     <canvas id="update-chart-1" height="50"></canvas>
@@ -61,7 +61,7 @@
             <div class="row align-items-end">
                 <div class="col-8">
                     <h4 class="text-white"><?php echo $sembuh ?></h4>
-                    <h6 class="text-white m-b-0">Sembuh</h6>
+                    <h6 class="text-white m-b-0">SEMBUH</h6>
                 </div>
                 <div class="col-4 text-right">
                     <canvas id="update-chart-2" height="50"></canvas>
@@ -79,7 +79,7 @@
             <div class="row align-items-end">
                 <div class="col-8">
                     <h4 class="text-white"><?php echo $positif ?></h4>
-                    <h6 class="text-white m-b-0">POSITIF</h6>
+                    <h6 class="text-white m-b-0">PERAWATAN</h6>
                 </div>
                 <div class="col-4 text-right">
                     <canvas id="update-chart-3" height="50"></canvas>
