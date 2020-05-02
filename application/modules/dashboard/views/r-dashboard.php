@@ -188,7 +188,7 @@
        </div>
        <div class="card-block">
         <div class="table-responsive">
-           <table class="table small table-hover table-bordered fixed_header">
+           <table class="table small table-hover table-bordered">
              <thead>
                <tr>
                  <th></th>

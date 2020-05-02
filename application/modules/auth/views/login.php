@@ -58,7 +58,7 @@
                     
                         <form class="md-float-material form-material" method="post" action="<?php echo base_url()?>Auth/login_proses">
                             <div class="text-center">
-                                <img src="<?php echo base_url()?>assets\backend\images\logodepan.png" width="30%" alt="logo.png">
+                                <img src="<?php echo base_url()?>assets\backend\images\jdev.png" width="15%" alt="logo.png">
                             </div>
                             <div class="auth-box card">
                                 <div class="card-block">

@@ -39,7 +39,7 @@
         <div class="container">
              <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand page-scroll" href="<?php echo base_url()?>Home"><img src="<?php echo base_url()?>assets\frontend\images\jdev.png" width="140px" alt="jayapuradev Logo"></a>
+                    <a class="navbar-brand page-scroll" href="<?php echo base_url()?>Home"><img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="50px" alt="jayapuradev Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -68,11 +68,10 @@
             <div class="footer">
                 <div class="container">
                     <div class="col-md-12 text-center">
-                        <img src="<?php echo base_url()?>assets\frontend\images\jayapura_dev.png" width="20%" alt="jayapuradev Logo">
+                        <img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="10%" alt="jayapuradev Logo">
                         <ul class="footer-menu">
-                            <li><a href="http://demo.com">Repositoty</a></li>
+                            <li><a href="https://github.com/Ekhel/KawalCoronaPapua/" target="_blank">Repositoty</a></li>
                             <li><a href="#">Gitter</a></li>
-                            <li><a href="#">Contribute</a></li>
                         </ul>
                         <div class="footer-text">
                             <p>

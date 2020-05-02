@@ -2,6 +2,8 @@
 <script src="<?php echo base_url()?>assets/frontend/js/exporting.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/export-data.js"></script>
 
+<script src="<?php echo base_url()?>assets\backend\js\jquery-1.11.3.min.js"></script>
+
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
     $positif = $i->Positif;
@@ -20,9 +22,16 @@
 foreach($sus as $l){
     $nama_kab[] = $l->nama_kab;
     $jumlah_suspect[] = (float)$l->confirm;
+    $jumlah_rawat[] = (float)$l->positif;
     $jumlah_sembuh[] = (float)$l->sembuh;
     $jumlah_meninggal[] = (float)$l->meninggal;
   }
+
+foreach($dataindo as $indo){
+    $indo_positif = $indo->positif;
+    $indo_sembuh = $indo->sembuh;
+    $indo_meninggal = $indo->meninggal;
+}
 ?>
 
 
@@ -44,9 +53,6 @@ foreach($sus as $l){
     </div>
 </div>
 
-
-
-
 <div class="flex-features" id="features">
     <div class="container">
         <div class="row">
@@ -63,7 +69,7 @@ foreach($sus as $l){
                     <img src="<?php echo base_url()?>assets/frontend/images/terluka.png" width="70px" alt="terluka" />
                     <span class="count-numbers"><?php echo $positif ?></span>
                     <span class="count-prosentase"><?php echo number_format($p_positif,2) ?> %</span>
-                    <span class="count-name">TOTAL POSITIF</span>
+                    <span class="count-name">TOTAL DIRAWAT</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -84,8 +90,12 @@ foreach($sus as $l){
                 </div>
             </div>
         </div>
+
+        <!-- Indo Live Data!-->
     </div>
 </div>
+
+
 
 <div class="flex-features" id="features">
     <div class="container">
@@ -107,10 +117,118 @@ foreach($sus as $l){
 <div class="flex-features" id="features">
     <div class="container">
         <div class="row">
+            <div class="col-xl-12 col-md-12">
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h5>Pasien Suspect Kabupaten/Kota</h5>
+                    </div>
+                    <div class="card-block">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Kabupaten/Kota</th>
+                                    <th>Positif</th>
+                                    <th>Dirawat</th>
+                                    <th>Sembuh</th>
+                                    <th>Meninggal</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $no = 1; 
+                                foreach($suskab as $pos){?>
+                                <tr>
+                                    <td class="text-center">
+                                        <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
+                                    </td>
+                                    <td class="text-uppercase"><?php echo $pos->nama_kab ?></td>
+                                    <td class="text-center"><label class="badge badge-default"><?php echo $pos->jumlah_suspect ?></label></td>
+                                    <td class="text-center"><label class="badge badge-warning"><?php echo $pos->positif ?></label></td>
+                                    <td class="text-center"><label class="badge badge-primary"><?php echo $pos->sembuh ?></label></td>
+                                    <td class="text-center"><label class="badge badge-danger"><?php echo $pos->meninggal ?></label></td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex-features" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>LIVE DATA KASUS INDONESIA</h3>
+                    </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card-counter yellow">
+                                    <img src="<?php echo base_url()?>assets/frontend/images/sedih2.png" width="70px" alt="sedih" />
+                                    <span class="count-numbers"><?php echo $indo_positif ?></span>
+                                    <span class="count-prosentase">INDONESIA</span>
+                                    <span class="count-name">TOTAL SUSPECT</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-counter lightgreen">
+                                    <img src="<?php echo base_url()?>assets/frontend/images/senang.png" width="70px" alt="senang" />
+                                    <span class="count-numbers"><?php echo $indo_sembuh ?></span>
+                                    <span class="count-prosentase">INDONESIA</span>
+                                    <span class="count-name">TOTAL SEMBUH</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-counter darkgreen">
+                                    <img src="<?php echo base_url()?>assets/frontend/images/menangis.png" width="70px" alt="senang" />
+                                    <span class="count-numbers"><?php echo $indo_meninggal ?></span>
+                                    <span class="count-prosentase">INDONESIA</span>
+                                    <span class="count-name">TOTAL MENINGGAL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="viewsuspectkabkota" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <div class="v_suspect">
+                
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="flex-features" id="features">
+    <div class="container">
+        <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>PASIEN SUSPECT</h3>
+                        <h3>PASIEN SUSPECT PER PROVINSI (Data : Kawal Corona Indonesia)</h3>
                     </div>
                     <div class="card-block">
                         <div class=table-responsive>
@@ -118,38 +236,22 @@ foreach($sus as $l){
                                 <thead>
                                     <tr>
                                         <th class="text-center"><strong>NO</strong></th>
-                                        <th><strong>KABUPATEN / KOTA</strong></th>
-                                        <th class="text-center">GENDER</th>
-                                        <th class="text-center">UMUR</th>
-                                        <th class="text-center">STATUS</th>
-                                        <th>DIRAWAT DI</th>
+                                        <th><strong>PROVINSI</strong></th>
+                                        <th class="text-center">POSITIF</th>
+                                        <th class="text-center">SEMBUH</th>
+                                        <th class="text-center">MENINGGAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
                                 $no = 1;
-                                foreach($datasuspect as $item){?>
-                                    <tr>
+                                foreach($dataprovinsi as $item){?>
+                                    <tr></tr>
                                         <td class="text-center"><?php echo $no++ ?></td>
-                                        <td class="text-uppercase"><?php echo $item->nama_kab ?></td>
-                                        <td class="text-center">
-                                            <?php if($item->gender == 'L'):?>
-                                            <img src="<?php echo base_url()?>assets/frontend/images/male2.png" width="25px" alt="male" />
-                                            <?php else: ?>
-                                                <img src="<?php echo base_url()?>assets/frontend/images/female2.png" width="25px" alt="female" />
-                                            <?php endif ?>
-                                        </td>
-                                        <td class="text-center"><?php echo $item->umur ?></td>
-                                        <td class="text-center">
-                                            <?php if($item->status == 'POSITIF'):?>
-                                                <label class="badge badge-danger"><?php echo $item->status ?></label>
-                                            <?php elseif($item->status == 'SEMBUH'):?>
-                                                <label class="badge badge-info"><?php echo $item->status ?></label>
-                                            <?php else: ?>
-                                                <label class="badge badge-warning"><?php echo $item->status ?></label>
-                                            <?php endif ?>
-                                        </td>
-                                        <td><?php echo $item->rs ?></td>
+                                        <td class="text-uppercase"><?php echo $item->attributes->Provinsi ?></td>
+                                        <td class="text-center"><?php echo $item->attributes->Kasus_Posi ?></td>
+                                        <td class="text-center"><?php echo $item->attributes->Kasus_Semb ?></td>
+                                        <td class="text-center"><?php echo $item->attributes->Kasus_Meni ?></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -200,6 +302,11 @@ foreach($sus as $l){
 
     },
     {
+        name: 'Dirawat',
+        data: <?php echo json_encode($jumlah_rawat); ?>
+
+    },
+    {
         name: 'Sembuh',
         data: <?php echo json_encode($jumlah_sembuh); ?>
 
@@ -210,4 +317,20 @@ foreach($sus as $l){
 
     }]
 });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('#viewsuspectkabkota').on('show.bs.modal', function (e) {
+        var idkabupaten = $(e.relatedTarget).data('id');
+        $.ajax({
+            type : 'POST',
+            url : '<?php echo base_url();?>home/get_suspect_kabkota/'+idkabupaten,
+            data :  'idkabupaten='+ idkabupaten,
+            success : function(data){
+            $('.v_suspect').html(data);
+            }
+        });
+    });
+  });
 </script>
