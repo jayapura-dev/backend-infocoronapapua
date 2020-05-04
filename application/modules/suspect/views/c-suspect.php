@@ -98,6 +98,12 @@
                 </div>
               </div>
               <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tanggal</label>
+                <div class="col-sm-10">
+                  <input type="date" name="date_created" value="<?php echo date('Y-m-d') ?>" class="form-control">
+                </div>
+              </div>
+              <div class="form-group row">
                 <label class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
                   <input type="submit" class="btn btn-primary btn-sm" value="Simpan" />

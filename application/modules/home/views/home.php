@@ -1,7 +1,6 @@
 <script src="<?php echo base_url()?>assets/frontend/js/highcharts.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/exporting.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/export-data.js"></script>
-
 <script src="<?php echo base_url()?>assets\backend\js\jquery-1.11.3.min.js"></script>
 
 <?php foreach($suspect as $i){
@@ -10,14 +9,12 @@
     $sembuh = $i->Sembuh;
     $meninggal = $i->Meninggal;
 } ?>
-
 <?php foreach($prosentase as $p){
     $p_positif = $p->p_positif;
     $p_sembuh = $p->p_sembuh;
     $p_meninggal = $p->p_meninggal;
 
 } ?>
-
 <?php
 foreach($sus as $l){
     $nama_kab[] = $l->nama_kab;
@@ -25,16 +22,13 @@ foreach($sus as $l){
     $jumlah_rawat[] = (float)$l->positif;
     $jumlah_sembuh[] = (float)$l->sembuh;
     $jumlah_meninggal[] = (float)$l->meninggal;
-  }
-
+}
 foreach($dataindo as $indo){
     $indo_positif = $indo->positif;
     $indo_sembuh = $indo->sembuh;
     $indo_meninggal = $indo->meninggal;
 }
 ?>
-
-
 
 <div class="hero-section app-hero">
     <div class="container">
@@ -44,10 +38,8 @@ foreach($dataindo as $indo){
                     <h1 class="wow fadeInUp" data-wow-delay="0s">INFO CORONA PAPUA</h1>
                     <p class="wow fadeInUp" data-wow-delay="0.2s">
                         COVID 19 PAPUA & INDONESIA LIVE DATA
-                        
                     </p>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -90,12 +82,8 @@ foreach($dataindo as $indo){
                 </div>
             </div>
         </div>
-
-        <!-- Indo Live Data!-->
     </div>
 </div>
-
-
 
 <div class="flex-features" id="features">
     <div class="container">
@@ -166,7 +154,7 @@ foreach($dataindo as $indo){
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>LIVE DATA KASUS INDONESIA</h3>
+                        <h3>LIVE DATA KASUS INDONESIA (Data : Kawal Corona Indonesia)</h3>
                     </div>
                     <div class="card-block">
                         <div class="row">
@@ -197,6 +185,37 @@ foreach($dataindo as $indo){
                                 </div>
                             </div>
                         </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
+                                <div class=table-responsive>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><strong>NO</strong></th>
+                                                <th><strong>PROVINSI</strong></th>
+                                                <th class="text-center">POSITIF</th>
+                                                <th class="text-center">SEMBUH</th>
+                                                <th class="text-center">MENINGGAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+                                        $no = 1;
+                                        foreach($dataprovinsi as $item){?>
+                                            <tr></tr>
+                                                <td class="text-center"><?php echo $no++ ?></td>
+                                                <td class="text-uppercase"><?php echo $item->attributes->Provinsi ?></td>
+                                                <td class="text-center"><?php echo $item->attributes->Kasus_Posi ?></td>
+                                                <td class="text-center"><?php echo $item->attributes->Kasus_Semb ?></td>
+                                                <td class="text-center"><?php echo $item->attributes->Kasus_Meni ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
@@ -215,50 +234,6 @@ foreach($dataindo as $indo){
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="flex-features" id="features">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>PASIEN SUSPECT PER PROVINSI (Data : Kawal Corona Indonesia)</h3>
-                    </div>
-                    <div class="card-block">
-                        <div class=table-responsive>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center"><strong>NO</strong></th>
-                                        <th><strong>PROVINSI</strong></th>
-                                        <th class="text-center">POSITIF</th>
-                                        <th class="text-center">SEMBUH</th>
-                                        <th class="text-center">MENINGGAL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php 
-                                $no = 1;
-                                foreach($dataprovinsi as $item){?>
-                                    <tr></tr>
-                                        <td class="text-center"><?php echo $no++ ?></td>
-                                        <td class="text-uppercase"><?php echo $item->attributes->Provinsi ?></td>
-                                        <td class="text-center"><?php echo $item->attributes->Kasus_Posi ?></td>
-                                        <td class="text-center"><?php echo $item->attributes->Kasus_Semb ?></td>
-                                        <td class="text-center"><?php echo $item->attributes->Kasus_Meni ?></td>
-                                    </tr>
-                                <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -317,6 +292,7 @@ foreach($dataindo as $indo){
 
     }]
 });
+
 </script>
 
 <script>
@@ -333,4 +309,50 @@ foreach($dataindo as $indo){
         });
     });
   });
+</script>
+
+<script>
+    Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json', function (data) {
+        Highcharts.mapChart('container', {
+            chart: {
+                borderWidth: 1,
+                map: 'custom/world'
+            },
+
+            title: {
+                text: 'World population 2013 by country'
+            },
+
+            subtitle: {
+                text: 'Demo of Highcharts map with bubbles'
+            },
+
+            legend: {
+                enabled: false
+            },
+
+            mapNavigation: {
+                enabled: true,
+                buttonOptions: {
+                    verticalAlign: 'bottom'
+                }
+            },
+
+            series: [{
+                name: 'Countries',
+                color: '#E0E0E0',
+                enableMouseTracking: false
+            }, {
+                type: 'mapbubble',
+                name: 'Population 2016',
+                joinBy: ['iso-a3', 'code3'],
+                data: data,
+                minSize: 4,
+                maxSize: '12%',
+                tooltip: {
+                    pointFormat: '{point.properties.hc-a2}: {point.z} thousands'
+                }
+            }]
+        });
+    });
 </script>
