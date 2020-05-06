@@ -19,7 +19,7 @@ class Api extends REST_Controller {
         $posts[] = array(
             'name'       => $name,
             'confirm'    => $item->Confirm,
-            'positif'    => $item->Positif,
+            'perawatan'  => $item->Positif,
             'sembuh'     => $item->Sembuh,
             'meninggal'  => $item->Meninggal
         );
@@ -45,7 +45,7 @@ class Api extends REST_Controller {
             'id_kabupaten'  => $item->id_kabupaten,
             'kabupaten'     => $item->nama_kab,
             'confirm'       => $item->confirm,
-            'positif'       => $item->positif,
+            'perawatan'     => $item->positif,
             'meninggal'     => $item->meninggal,
             'sembuh'        => $item->sembuh,
             'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
@@ -67,7 +67,7 @@ class Api extends REST_Controller {
             'id_kabupaten'  => $item->id_kabupaten,
             'kabupaten'     => $item->nama_kab,
             'confirm'       => $item->confirm,
-            'positif'       => $item->positif,
+            'perawatan'     => $item->positif,
             'meninggal'     => $item->meninggal,
             'sembuh'        => $item->sembuh,
             'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo

@@ -30,20 +30,11 @@
 * Frontend :
   - [Kawal Corona Papua](https://github.com/Ekhel/frontend-kawal-corona-papua)
 
-* HOST
-  - [Hostinger](https://hostinger.co.id)
-
 ------------------------------------------------------------------------------
 
-## Sumber WEB dan API :
+## API Services  :
 
-* WEB :
-  - [Kawal Corona Indonesia](https://kawalcorona.com)
-  - [Ethical Hacker Indonesia](https://hack.co.id)
-  - [Kawal Corona Papua](https://kawal-corona.herokuapp.com)
-
-
-* API Services :
+* API Services Live Data Indonesia & Provinsi :
   - [Data Indonesia : https://api.kawalcorona.com/indonesia](https://api.kawalcorona.com/indonesia)
 
   - [Data Provinsi : https://api.kawalcorona.com/indonesia/provinsi](https://api.kawalcorona.com/indonesia/provinsi)
@@ -67,7 +58,7 @@
           {
             "name": "papua",
             "confirm": "240",
-            "positif": "174",
+            "perawatan": "174",
             "sembuh": "59",
             "meninggal": "7"
           }
@@ -89,7 +80,7 @@
             "id_kabupaten": "1",
             "kabupaten": "Jayapura",
             "confirm": "36",
-            "positif": "25",
+            "perawatan": "25",
             "meninggal": "1",
             "sembuh": "10",
             "logo_thumb": "http://localhost/KawalCoronaPapua/assets/backend/images/kabkota/Jayapura.png"
