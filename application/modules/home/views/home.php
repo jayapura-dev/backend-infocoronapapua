@@ -108,7 +108,7 @@ foreach($dataindo as $indo){
             <div class="col-xl-12 col-md-12">
                 <div class="card table-card">
                     <div class="card-header">
-                        <h5>Pasien Suspect Kabupaten/Kota</h5>
+                        <h5>REKAP KABUPATEN / KOTA</h5>
                     </div>
                     <div class="card-block">
                         <div class="table-responsive">
@@ -189,7 +189,7 @@ foreach($dataindo as $indo){
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                                 <div class=table-responsive>
-                                    <table class="table table-bordered">
+                                    <!--<table class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th class="text-center"><strong>NO</strong></th>
@@ -212,7 +212,7 @@ foreach($dataindo as $indo){
                                             </tr>
                                         <?php } ?>
                                         </tbody>
-                                    </table>
+                                    </table>!-->
                                 </div>
                             </div>
                         </div>
