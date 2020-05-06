@@ -38,6 +38,12 @@ class Home extends MX_Controller{
     $this->template->load('frontend_site','hotline',$data);
   }
 
+  public function api()
+  {
+    $data['title'] = 'API For Developers';
+    $this->template->load('frontend_site','api',$data);
+  }
+
   public function get_suspect_kabkota($id_kabupaten)
   {
     $data['kabkotasuspect'] = $this->M_dashboard->get_suspect_kabkota($id_kabupaten);

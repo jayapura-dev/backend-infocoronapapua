@@ -10,11 +10,37 @@ class Api extends REST_Controller {
       $this->load->model('M_api');
   }
 
-  function index_get()
+  public function index_get()
   {
-    $kabkota = $this->M_api->rekapkabkota();
+    $info = $this->M_api->rekap_suspect();
+    $name = 'papua';
 
-    foreach($kabkota as $item){
+    foreach($info as $item){
+        $posts[] = array(
+            'name'       => $name,
+            'confirm'    => $item->Confirm,
+            'positif'    => $item->Positif,
+            'sembuh'     => $item->Sembuh,
+            'meninggal'  => $item->Meninggal
+        );
+    }
+
+    if ($info) {
+      $this->response([
+        'status'  => true,
+        'result'  => $posts
+      ], REST_Controller::HTTP_OK);
+    }
+  }
+
+  function kabupaten_get()
+  {
+    $id = $this->get('id_kabupaten');
+
+    if($id === null) {
+      $kabkota = $this->M_api->rekapkabkota();
+
+      foreach($kabkota as $item){
         $posts[] = array(
             'id_kabupaten'  => $item->id_kabupaten,
             'kabupaten'     => $item->nama_kab,
@@ -24,13 +50,37 @@ class Api extends REST_Controller {
             'sembuh'        => $item->sembuh,
             'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
         );
-    }
+      }
 
-    if ($kabkota) {
-      $this->response([
-        'status'  => true,
-        'kabkota' => $posts
-      ], REST_Controller::HTTP_OK);
+      if ($kabkota) {
+        $this->response([
+          'status'  => true,
+          'result'  => $posts
+        ], REST_Controller::HTTP_OK);
+      }
+    }
+    else {
+      $kabkota = $this->M_api->rekapkabkota($id);
+
+      foreach($kabkota as $item){
+        $posts[] = array(
+            'id_kabupaten'  => $item->id_kabupaten,
+            'kabupaten'     => $item->nama_kab,
+            'confirm'       => $item->confirm,
+            'positif'       => $item->positif,
+            'meninggal'     => $item->meninggal,
+            'sembuh'        => $item->sembuh,
+            'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
+        );
+      }
+
+      if ($kabkota) {
+        $this->response([
+          'status'      => true,
+          'id_kabupaten'=> $id,
+          'result'      => $posts,
+        ], REST_Controller::HTTP_OK);
+      }
     }
   }
 
@@ -54,28 +104,7 @@ class Api extends REST_Controller {
     if ($suspect) {
       $this->response([
         'status'  => true,
-        'suspect' => $posts
-      ], REST_Controller::HTTP_OK);
-    }
-  }
-
-  public function infosuspect_get()
-  {
-    $info = $this->M_api->rekap_suspect();
-
-    foreach($info as $item){
-        $posts[] = array(
-            'confirm'    => $item->Confirm,
-            'positif'    => $item->Positif,
-            'sembuh'     => $item->Sembuh,
-            'meninggal'  => $item->Meninggal
-        );
-    }
-
-    if ($info) {
-      $this->response([
-        'status'  => true,
-        'result'  => $posts
+        'result' => $posts
       ], REST_Controller::HTTP_OK);
     }
   }

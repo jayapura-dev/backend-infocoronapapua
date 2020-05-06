@@ -54,7 +54,7 @@
                                 <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/hotline">HOTLINE</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#features">API For Developer</a>
+                                <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/api">API For Developer</a>
                             </li>
                         </ul>
                     </div>
@@ -97,6 +97,9 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\plugins.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\menu.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\custom.js"></script>
+
+    <script type="text/javascript" src="<?php echo base_url()?>assets\backend\pages\prism\custom-prism.js"></script>
 </body>
 
 </html>
+    )

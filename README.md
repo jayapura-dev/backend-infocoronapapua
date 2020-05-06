@@ -56,6 +56,48 @@
   
   - [Data Global Sembuh : https://api.kawalcorona.com/sembuh/](https://api.kawalcorona.com/sembuh)
 
+* API Services Kusus Data Papua :
+  - [Data Papua : http://localhost/api](http://localhost/KawalCoronaPapua/api/)
+    * Sample Response :
+
+      ```javascripts
+      {
+        "status": true,
+        "result": [
+          {
+            "name": "papua",
+            "confirm": "240",
+            "positif": "174",
+            "sembuh": "59",
+            "meninggal": "7"
+          }
+        ]
+      }
+      ```
+
+  - [Data Kabupaten : http://localhost/api/kabupaten](http://localhost/KawalCoronaPapua/api/kabupaten)
+  - [Data Kabupaten (Params) : http://localhost/api/kabupaten?id_kabupaten=1](http://localhost/KawalCoronaPapua/api/kabupaten?id_kabupaten=1)
+    * Sample Response :
+    * Dengan Parameter id_kabupaten
+
+      ```javascripts
+      {
+        "status": true,
+        "id_kabupaten": "1",
+        "result": [
+          {
+            "id_kabupaten": "1",
+            "kabupaten": "Jayapura",
+            "confirm": "36",
+            "positif": "25",
+            "meninggal": "1",
+            "sembuh": "10",
+            "logo_thumb": "http://localhost/KawalCoronaPapua/assets/backend/images/kabkota/Jayapura.png"
+          }
+        ]
+      }
+      ```
+
 
 ----------------------------------------------------------------------------------------------------------
 
