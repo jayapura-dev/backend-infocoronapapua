@@ -43,7 +43,7 @@ class Api extends REST_Controller {
       foreach($kabkota as $item){
         $posts[] = array(
             'id_kabupaten'  => $item->id_kabupaten,
-            'kabupaten'     => $item->nama_kab,
+            'kabkota'       => $item->nama_kab,
             'confirm'       => $item->confirm,
             'perawatan'     => $item->positif,
             'meninggal'     => $item->meninggal,
@@ -65,7 +65,7 @@ class Api extends REST_Controller {
       foreach($kabkota as $item){
         $posts[] = array(
             'id_kabupaten'  => $item->id_kabupaten,
-            'kabupaten'     => $item->nama_kab,
+            'kabkota'       => $item->nama_kab,
             'confirm'       => $item->confirm,
             'perawatan'     => $item->positif,
             'meninggal'     => $item->meninggal,
