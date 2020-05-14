@@ -33,57 +33,6 @@ class Api extends REST_Controller {
     }
   }
 
-  function kabupaten_get()
-  {
-    $id = $this->get('id_kabupaten');
-
-    if($id === null) {
-      $kabkota = $this->M_api->rekapkabkota();
-
-      foreach($kabkota as $item){
-        $posts[] = array(
-            'id_kabupaten'  => $item->id_kabupaten,
-            'kabkota'       => $item->nama_kab,
-            'confirm'       => $item->confirm,
-            'perawatan'     => $item->positif,
-            'meninggal'     => $item->meninggal,
-            'sembuh'        => $item->sembuh,
-            'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
-        );
-      }
-
-      if ($kabkota) {
-        $this->response([
-          'status'  => true,
-          'result'  => $posts
-        ], REST_Controller::HTTP_OK);
-      }
-    }
-    else {
-      $kabkota = $this->M_api->rekapkabkota($id);
-
-      foreach($kabkota as $item){
-        $posts[] = array(
-            'id_kabupaten'  => $item->id_kabupaten,
-            'kabkota'       => $item->nama_kab,
-            'confirm'       => $item->confirm,
-            'perawatan'     => $item->positif,
-            'meninggal'     => $item->meninggal,
-            'sembuh'        => $item->sembuh,
-            'logo_thumb'    => base_url().'assets/backend/images/kabkota/'.$item->logo
-        );
-      }
-
-      if ($kabkota) {
-        $this->response([
-          'status'      => true,
-          'id_kabupaten'=> $id,
-          'result'      => $posts,
-        ], REST_Controller::HTTP_OK);
-      }
-    }
-  }
-
   function suspect_get()
   {
     $suspect = $this->M_api->suspect();

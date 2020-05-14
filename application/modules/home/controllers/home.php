@@ -15,8 +15,6 @@ class Home extends MX_Controller{
       $this->load->model(array(
         'dashboard/M_dashboard',
         'M_home'));
-        
-
   }
 
   public function index()

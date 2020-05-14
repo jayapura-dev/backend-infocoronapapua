@@ -1,7 +1,18 @@
 <script src="<?php echo base_url()?>assets/frontend/js/highcharts.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/exporting.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/export-data.js"></script>
-<script src="<?php echo base_url()?>assets\backend\js\jquery-1.11.3.min.js"></script>
+<script src="<?php echo base_url()?>assets/backend/js/jquery-1.11.3.min.js"></script>
+
+<style>
+    body {
+    padding: 0;
+    margin: 0;
+    }
+    html, body, #map {
+    height: 100%;
+    width: 100%;
+    }
+</style>
 
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
@@ -105,6 +116,23 @@ foreach($dataindo as $indo){
 <div class="flex-features" id="features">
     <div class="container">
         <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>MAPS</h3>
+                    </div>
+                    <div class="card-block">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex-features" id="features">
+    <div class="container">
+        <div class="row">
             <div class="col-xl-12 col-md-12">
                 <div class="card table-card">
                     <div class="card-header">
@@ -117,10 +145,10 @@ foreach($dataindo as $indo){
                                 <tr>
                                     <th></th>
                                     <th>Kabupaten/Kota</th>
-                                    <th>Positif</th>
-                                    <th>Dirawat</th>
-                                    <th>Sembuh</th>
-                                    <th>Meninggal</th>
+                                    <th class="text-center">Positif</th>
+                                    <th class="text-center">Dirawat</th>
+                                    <th class="text-center">Sembuh</th>
+                                    <th class="text-center">Meninggal</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -132,10 +160,10 @@ foreach($dataindo as $indo){
                                         <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
                                     </td>
                                     <td class="text-uppercase"><?php echo $pos->nama_kab ?></td>
-                                    <td class="text-center"><label class="badge badge-default"><?php echo $pos->jumlah_suspect ?></label></td>
-                                    <td class="text-center"><label class="badge badge-warning"><?php echo $pos->positif ?></label></td>
-                                    <td class="text-center"><label class="badge badge-primary"><?php echo $pos->sembuh ?></label></td>
-                                    <td class="text-center"><label class="badge badge-danger"><?php echo $pos->meninggal ?></label></td>
+                                    <td class="text-center"><?php echo $pos->jumlah_suspect ?></td>
+                                    <td class="text-center"><?php echo $pos->positif ?></td>
+                                    <td class="text-center"><?php echo $pos->sembuh ?></td>
+                                    <td class="text-center"><?php echo $pos->meninggal ?></td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
@@ -240,6 +268,7 @@ foreach($dataindo as $indo){
 </div>
 
 <script type="text/javascript">
+
     Highcharts.chart('info', {
     chart: {
         type: 'column'
@@ -312,47 +341,14 @@ foreach($dataindo as $indo){
 </script>
 
 <script>
-    Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json', function (data) {
-        Highcharts.mapChart('container', {
-            chart: {
-                borderWidth: 1,
-                map: 'custom/world'
-            },
+    var L = window.L;
+    var map = L.map('map').setView([51.505, -0.09], 13);
 
-            title: {
-                text: 'World population 2013 by country'
-            },
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-            subtitle: {
-                text: 'Demo of Highcharts map with bubbles'
-            },
-
-            legend: {
-                enabled: false
-            },
-
-            mapNavigation: {
-                enabled: true,
-                buttonOptions: {
-                    verticalAlign: 'bottom'
-                }
-            },
-
-            series: [{
-                name: 'Countries',
-                color: '#E0E0E0',
-                enableMouseTracking: false
-            }, {
-                type: 'mapbubble',
-                name: 'Population 2016',
-                joinBy: ['iso-a3', 'code3'],
-                data: data,
-                minSize: 4,
-                maxSize: '12%',
-                tooltip: {
-                    pointFormat: '{point.properties.hc-a2}: {point.z} thousands'
-                }
-            }]
-        });
-    });
+    L.marker([51.5, -0.09]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
 </script>

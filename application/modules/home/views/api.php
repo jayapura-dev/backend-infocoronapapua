@@ -24,7 +24,7 @@
                         <h3>API DATA PAPUA ( GET )</h3>
                     </div>
                     <div class="card-block">
-                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua</text></h1>
+                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua.com</text></h1>
                         <br/>
                         <br/>
                         <p>SAMPLE RESPONSE :</p>
@@ -62,7 +62,7 @@
                         <h3>API DATA KABUPATEN ( GET )</h3>
                     </div>
                     <div class="card-block">
-                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua/kabupaten</text></h1>
+                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua.com/kabupaten</text></h1>
                         <br/>
                         <br/>
                         <p>SAMPLE RESPONSE :</p>
@@ -109,7 +109,7 @@
                         <h3>API DATA KABUPATEN Parameter ID Kabupaten ( GET )</h3>
                     </div>
                     <div class="card-block">
-                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua/kabupaten?id_kabupaten=2</text></h1>
+                        <h1>END POINT : <text class="label badge-info">https://api.infocoronapapua.com/kabupaten?id_kabupaten=2</text></h1>
                         <br/>
                         <br/>
                         <p>SAMPLE RESPONSE :</p>

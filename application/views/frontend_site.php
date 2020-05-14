@@ -9,7 +9,7 @@
     <meta name="description" content="Landing page template for creative dashboard">
     <meta name="keywords" content="Landing page template">
     <!-- Favicon icon -->
-    <link rel="icon" href="<?php echo base_url()?>assets\backend\images\coronaicon1.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="<?php echo base_url()?>assets\frontend\images\jdev2.png" type="image/png" sizes="16x32">
     <!-- Bootstrap -->
     <link href="<?php echo base_url()?>assets\frontend\css\bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <!-- Font -->
@@ -30,6 +30,10 @@
     <link href="<?php echo base_url()?>assets\frontend\css\style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<?php echo base_url()?>assets\frontend\css\card.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()?>assets\frontend\css\card2.css" rel="stylesheet" type="text/css">
+
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="<?php echo base_url()?>assets\leaflet\leaflet.css" />
+
     
 </head>
 
@@ -99,7 +103,10 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\custom.js"></script>
 
     <script type="text/javascript" src="<?php echo base_url()?>assets\backend\pages\prism\custom-prism.js"></script>
-</body>
 
+    <!-- Leaflet -->
+    <script type="text/javascript" src="<?php echo base_url()?>assets\leaflet\leaflet.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets\leaflet-providers\leaflet-providers.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
+</body>
 </html>
-    )
