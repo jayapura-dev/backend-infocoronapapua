@@ -177,7 +177,7 @@ class M_dashboard extends CI_model{
         positif / jumlah_suspect * 100 as p_positif,
         sembuh / jumlah_suspect * 100 as p_sembuh,
         meninggal / jumlah_suspect * 100 as p_meninggal
-        FROM v_jumlah_suspect 
+        FROM v_jumlah_suspect
         WHERE id_kabupaten = '$id_kabupaten' ");
         return $query->row_array();
     }

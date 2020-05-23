@@ -6,8 +6,8 @@
     <title><?php echo $title ?></title>
     <!-- Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Landing page template for creative dashboard">
-    <meta name="keywords" content="Landing page template">
+    <meta name="description" content="Live Data Covid 19 Papua & Indonesia">
+    <meta name="keywords" content="Info Corona Papua">
     <!-- Favicon icon -->
     <link rel="icon" href="<?php echo base_url()?>assets\frontend\images\jdev2.png" type="image/png" sizes="16x32">
     <!-- Bootstrap -->
