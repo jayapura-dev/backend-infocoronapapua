@@ -28,7 +28,7 @@
   - REST_Controllers
 
 * Frontend :
-  - [Kawal Corona Papua](https://github.com/Ekhel/frontend-kawal-corona-papua)
+  - [Info Corona Papua](https://github.com/jayapura-dev/frontend-infocoronapapua)
 
 ------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@
   - [Data Global Sembuh : https://api.kawalcorona.com/sembuh/](https://api.kawalcorona.com/sembuh)
 
 * API Services Kusus Data Papua :
-  - [Data Papua : http://localhost/api](http://localhost/KawalCoronaPapua/api/)
+  - [Data Papua : https://api.infocoronapapua.com](https://api.infocoronapapua.com)
     * Sample Response :
 
       ```javascripts
@@ -66,8 +66,8 @@
       }
       ```
 
-  - [Data Kabupaten : http://localhost/api/kabupaten](http://localhost/KawalCoronaPapua/api/kabupaten)
-  - [Data Kabupaten (Params) : http://localhost/api/kabupaten?id_kabupaten=1](http://localhost/KawalCoronaPapua/api/kabupaten?id_kabupaten=1)
+  - [Data Kabupaten : https://api.infocoronapapua.com](https://api.infocoronapapua.com)
+  - [Data Kabupaten (Params) : https://api.infocoronapapua.com/kabkota?id_kabupaten=2](https://api.infocoronapapua.com/kabkota?id_kabupaten=2)
     * Sample Response :
     * Dengan Parameter id_kabupaten
 
@@ -106,11 +106,8 @@
   - [x] Send Data item PDP Ke Suspect
   - [x] Print out ODP, PDP, SUSPECT
   - [x] Backup Database & File
+  - [x] 2 Level Akses (Tersedia Untuk Provinsi & Kabupaten)
 
---------------------------------------------------------------------------------------------------------------
-
-## Yang Akan dikerjakan : 
-  - [ ] Grafik Line Untuk ODP, PDP dan Suscpect
 ---------------------------------------------------------------------------------------------------------------
 
 ## Screen
